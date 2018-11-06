@@ -4,10 +4,16 @@
 			<div class="top1_left">星移网络科技有限公司</div>
 			<ul class="top1_right">
 				<li>
-					<a href=""><img src="/games_center/20150815125126_XdBAr.thumb.700_0@2x.png" alt=""></a><span><a href="" class="active">星移盒子</a></span>
+					<a href="javascript:void(0);"><img src="/games_center/20150815125126_XdBAr.thumb.700_0@2x.png" alt=""></a>
+					<span><a href="javascript:void(0);" class="active">星移盒子</a></span>
+					<div class="active_box">
+						<div><img src="/games_center/用户中心@2x.png" alt=""><span>用户中心</span></div>
+						<div><img src="/games_center/退出@2x.png" alt=""><span> 退出</span></div>
+					</div>
 				</li>
 				<li>
-					<a href=""><img src="/games_center/退出@2x.png" alt=""></a><span><a href="">退出</a></span>
+					<a href="javascript:void(0);"><img src="/games_center/退出@2x.png" alt=""></a>
+					<span><a href="javascript:void(0);">退出</a></span>
 				</li>
 				<li>
 					<div class="pos_div">
@@ -25,11 +31,11 @@
 				</div>
 				<div class="top2_right">
 					<ul>
-						<li><a href="" class="active">游戏中心</a></li>
-						<li><a href="">下载中心</a></li>
-						<li><a href="">在线充值</a></li>
-						<li><a href="">关于星移</a></li>
-						<li><a href="">商务合作</a></li>
+						<li><a href="javascript:void(0);" class="active">游戏中心</a></li>
+						<li><a href="javascript:void(0);">下载中心</a></li>
+						<li><a href="javascript:void(0);">在线充值</a></li>
+						<li><a href="javascript:void(0);">关于星移</a></li>
+						<li><a href="javascript:void(0);">商务合作</a></li>
 					</ul>
 				</div>
 			</div>
@@ -44,11 +50,11 @@
     					<div class="warp">
     						<div class="title">热门标签</div>
 		    				<ul>
-		    					<li><a href="" class="active">棋牌</a></li>
-		    					<li><a href="">篮球</a></li>
-		    					<li><a href="">单机</a></li>
-		    					<li><a href="">免费</a></li>
-		    					<li><a href="">职业</a></li>
+		    					<li><a href="javascript:void(0);" class="active">棋牌</a></li>
+		    					<li><a href="javascript:void(0);">篮球</a></li>
+		    					<li><a href="javascript:void(0);">单机</a></li>
+		    					<li><a href="javascript:void(0);">免费</a></li>
+		    					<li><a href="javascript:void(0);">职业</a></li>
 		    				</ul>
     					</div>
     				</div>
@@ -83,10 +89,10 @@
     			</div>
     			<div class="content_right">
     				<div class="gametitle">
-    					<a href="">所有游戏</a>
-    					<a href="">热门游戏</a>
-    					<a href="">手机游戏</a>
-    					<a href="">网页游戏</a>
+    					<a href="javascript:void(0);">所有游戏</a>
+    					<a href="javascript:void(0);">热门游戏</a>
+    					<a href="javascript:void(0);">手机游戏</a>
+    					<a href="javascript:void(0);">网页游戏</a>
     				</div>
     				<div class="gamecontent">
     					<ul>
@@ -107,21 +113,21 @@
     		<div class="container">
     			<div class="foot_title">合作伙伴：</div>
 	    		<ul class="foot_list">
-	    			<li v-for="item in 8" :key="item"><a href="">星移盒子</a></li>
+	    			<li v-for="item in 8" :key="item"><a href="javascript:void(0);">星移盒子</a></li>
 	    		</ul>
 	    		<div class="clear"></div>
 	    		<ul class="nav_list">
-	    			<li>产品中心</li>
+	    			<li><a href="javascript:void(0);">产品中心</a></li>
 	    			<li>|</li>
-	    			<li>下载中心</li>
+	    			<li><a href="javascript:void(0);">下载中心</a></li>
 	    			<li>|</li>
-	    			<li>关于星移</li>
+	    			<li><a href="javascript:void(0);">关于星移</a></li>
 	    			<li>|</li>
-	    			<li>商务合作</li>
+	    			<li><a href="javascript:void(0);">商务合作</a></li>
 	    			<li>|</li>
-	    			<li>关于星移</li>
+	    			<li><a href="javascript:void(0);">关于星移</a></li>
 	    			<li>|</li>
-	    			<li>联系我们</li>
+	    			<li><a href="javascript:void(0);">联系我们</a></li>
 	    		</ul>
 	    		<div class="clear"></div>
 	    		<p class="comment">Copyright © 2015-2018 WanPlus. All rights reserved | 深圳星移网络科技有限公司</p>
@@ -147,6 +153,8 @@ container()
 	margin 0 auto
 .clear
 	clear both
+.hide
+	display none
 .main
 	min-width 1000px
 	/*placehoder属性的默认颜色*/
@@ -178,6 +186,45 @@ container()
 				margin-left 15px
 				line-height top1_h
 				color #999
+				&:first-child
+					position relative
+					.active_box
+						position absolute
+						width 105%
+						left 10px
+						border 1px solid rgba(203,203,203,1)
+						top 100%
+						background #fff
+						border-radius 3px
+						box-shadow 0px 1px 4px 0px rgba(0, 0, 0, 0.18)
+						line-height 20px
+						font-size 13px
+						padding 7px 0
+						text-indent 10px
+						div
+							cursor pointer
+							img
+								vertical-alilgn middle
+							span
+								vertical-alilgn middle
+								&.active
+									color #FD8F24
+							public_icon(color,size)
+								content ''
+								position absolute
+								bottom 100%
+								left 50%
+								transform translateX(-50%)
+								width 0
+								height 0
+								border-width size
+								border-style solid
+								border-color transparent transparent color transparent
+								box-shadow 1px solid red
+							&:before
+								public_icon(#e1e1e1,7px)
+							&:after
+								public_icon(#fff,5px)
 				img
 					vertical-align middle
 				span
@@ -191,7 +238,7 @@ container()
 					input
 						font-size 12px
 						width 100px
-						height 50%
+						height 30px
 						border-radius 10px
 						padding 0 40px 0 20px
 					.inner_img
@@ -204,6 +251,7 @@ container()
 	.top2
 		height top2_h
 		background rgba(255,255,255,1)
+		border 1px solid #e1e1e1
 		.container
 			container()
 			.top2_left
