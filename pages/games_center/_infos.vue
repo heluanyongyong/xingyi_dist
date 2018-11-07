@@ -1,0 +1,248 @@
+<template>
+	<div>
+		<div class="center" style="background-image:url('/games_list/图层 3@2x.png')">
+			<div class="container">
+				<div class="top">
+					<div class="top_content">
+						<div class="top1_left">
+							<img src="/games_list/oss_5b923f9fc82ec@2x.png" alt="">
+						</div>
+						<div class="top1_center">
+							<h3 class="title">天命奇御</h3>
+							<ul>
+								<li>在线人数：<span>123456</span></li>
+								<li>游戏类型：<span>角色</span></li>
+							</ul>
+							<ul>
+								<li>更新时间：<span>2017-10-23</span></li>
+								<li>状态：<span>公测</span></li>
+							</ul>
+						</div>
+						<div class="top1_right">
+							<img src="/games_list/timg@2x.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="game_list">
+					<ul>
+						<li><a href="javascript:void(0)" @click="change_list(0)" class="active">游戏介绍</a></li>
+						<li><a href="javascript:void(0)" @click="change_list(1)">特色玩法</a></li>
+						<li><a href="javascript:void(0)" @click="change_list(2)">技术亮点</a></li>
+						<li><a href="javascript:void(0)" @click="change_list(3)">角色设定</a></li>
+					</ul>
+				</div>
+				<div class="game_content" ref="divs">
+					<!-- 游戏介绍 -->
+					<div class="info info1 active">
+						不羁少年柴朔风意外识破一场阴谋而引祸上身。绝处逢生的他竟成为「天命之人」，从此肩负起江湖血、天下命，开启仗剑豪情的侠客之路。游戏中具有高自由度任务由你探索、刺激实时战斗等你挑战、丰富支线剧情更将触发无数精彩奇遇，你的抉择将颠覆你的命运，改写不同结局。玩家可以任意游走于多条主线，挑战悬赏解谜，结识红颜知己、习得各派武功，每个抉择都可能颠覆命运，创造精采多重结局。是睥睨天下或淡入尘俗？唯有踏入江湖，剑写天命！
+					</div>
+					<!-- 特色玩法 -->
+					<div class="info info2">
+						<ul class="ul_left">
+							<li v-for="item in 3" :key="item">
+								<i></i>
+								<span>后起之秀</span>
+								<span>2018.10.22</span>
+							</li>
+						</ul>
+						<ul class="ul_right">
+							<li v-for="item in 3" :key="item">
+								<i></i>
+								<span>后起之秀</span>
+								<span>2018.10.23</span>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
+					<!-- 技术亮点 -->
+					<div class="info info3">
+						不羁少年柴朔风意外识破一场阴谋而引祸上身。绝处逢生的他竟成为「天命之人」，从此肩负起江湖血、天下命，开启仗剑豪情的侠客之路。游戏中具有高自由度任务由你探索、刺激实时战斗等你挑战、丰富支线剧情更将触发无数精彩奇遇，你的抉择将颠覆你的命运，改写不同结局。玩家可以任意游走于多条主线，挑战悬赏解谜，结识红颜知己、习得各派武功，每个抉择都可能颠覆命运，创造精采多重结局。是睥睨天下或淡入尘俗？唯有踏入江湖，剑写天命！
+					</div>
+					<!-- 角色设定 -->
+					<div class="info info4">
+						<a href="" class="pos_icon pos_left"><img src="/games_list2/择律-付费咨询列表页分割箭头 拷贝@2x.png" alt=""></a>
+						<div class="left">
+							<img src="/games_list2/20140123075905_7671@2x.png" alt="">
+						</div>
+						<div class="right">
+							<h3 class="title">暗月马戏团</h3>
+							<p>
+								暗月马戏团在艾泽拉斯的大地上，以经久不衰的演出及稀有道具赢得了足够的尊重。艾鲁作为团长，也是神话般的存在，他的时光瞬移节目总能让年轻的法师观众们报以热烈的追捧。然而艾鲁最后一次前往时光之穴搜集“时光砂”时，却意外的穿越到了一个叫做三国的时代。
+							</p>...
+						</div>
+						<a href="" class="pos_icon pos_right"><img src="/games_list2/择律-付费咨询列表页分割箭头@2x.png" alt=""></a>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="bottom">
+					<ol>
+						<li><a href="">游戏壁纸</a></li>
+						<li><a href="" class="active">游戏截图</a></li>
+					</ol>
+					<div class="clear"></div>
+					<ul>
+						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
+						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
+						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
+						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
+						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+<style scoped lang="stylus">
+@import '~assets/public.styl'
+.center
+	background-size 100% 121%
+	padding-bottom 60px
+	.container
+		container()
+		overflow hidden
+		.top
+			margin-top 60px
+			height 210px
+			background #fff
+			.top_content
+				padding 30px 35px
+				div
+					float left
+					&.top1_left
+						width 150px
+						img
+							width 100%
+					&.top1_center
+						margin 10px 25px
+						.title
+							bold()
+							color #FD8F24
+							font-size 25px
+						ul
+							margin-top 20px
+							float left
+							width 200px
+							li
+								line-height 40px
+								span
+									color #fd8f24
+					&.top1_right
+						float right
+						width 150px
+						img
+							width 100%
+		.game_list
+			height 50px
+			background #f3f3f3
+			font-size 18px
+			ul
+				li
+					float left
+					width 160px
+					line-height 50px
+					text-align left
+					&:first-child
+						margin-left 35px
+					a
+						color #000
+						&.active
+							color #FD8F24
+		.game_content
+			background #fff
+			.info
+				padding 35px 35px
+				display none
+			.active
+				display block
+			.info1,.info3
+				line-height 25px
+			.info2
+				padding 25px 35px 35px 35px
+				ul
+					width 44%
+					&.ul_left
+						float left
+					&.ul_right
+						float right
+					li
+						border-bottom 1px dashed rgb(225,225,225)
+						line-height 40px
+						i
+							width 10px
+							height 10px
+							background #fd8f24
+							display inline-block
+							transform rotate(45deg)
+							margin-right 5px
+						span
+							font-size 15px
+							&:last-child
+								float right
+			.info4
+				margin 0 35px
+				position relative
+				.pos_icon
+					position absolute
+					top 50%
+					transform translateY(-50%)
+				.pos_left
+					left 0
+				.pos_right
+					right 0
+				.left
+					float left
+					/*left+right的宽度之和不能超过100*/
+					width 25%
+					margin 0 2.5%
+				.right
+					float left
+					width 55%
+					margin 0 5%
+					.title
+						margin-top 10px
+						font-size 24px
+						color #FD8F24
+					/*行数溢出*/
+					p
+						margin-top 15px
+						position relative
+						line-height 25px
+						max-height 100px
+						overflow hidden
+		.bottom
+			margin-top 25px
+			height 220px
+			background #fff
+			padding 0 30px
+			ul
+				li
+					margin-top 20px
+					float left
+					width 20%
+					text-align center
+					img
+						width 95%
+			ol
+				li
+					margin-top 30px
+					float left
+					width 120px
+					&:first-child
+						margin-left 5px
+					a
+						color #000
+						font-size 18px
+						&.active
+							color #FD8F24
+</style>
+<script>
+export default{
+	layout:'top',
+	methods:{
+		change_list(index){
+			$('.center .game_list ul li').eq(index).find('a').css('color','#FD8F24').parent('li').siblings().find('a').css('color','#000');
+			$('.center .game_content>div').eq(index).addClass('active').siblings().removeClass('active');
+		}
+	}
+}
+</script>

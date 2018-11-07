@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 module.exports = {
   /*
   ** Headers of the page
@@ -33,11 +34,18 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+    plugins:[
+      new webpack.ProvidePlugin({
+        '$':'jquery'
+      })
+    ]
   },
-  css: [{
-    src: '~assets/reset.styl',
-    lang: 'styl'
-  }]  
+  css: [
+    {
+      src: '~assets/reset.styl',
+      lang: 'styl'
+    }
+  ]  
 }
 
