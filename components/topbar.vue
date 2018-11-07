@@ -34,10 +34,11 @@
 				<div class="game_list">
 					<ul>
 						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
-						<li><nuxt-link to="/#">下载中心</nuxt-link></li>
-						<li><nuxt-link to="/#">在线充值</nuxt-link></li>
-						<li><nuxt-link to="/#">关于星移</nuxt-link></li>
+						<li><nuxt-link to="/download_center">下载中心</nuxt-link></li>
+						<li><nuxt-link to="/about_xingyi/synopsis">关于星移</nuxt-link></li>
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
+						<li><nuxt-link to="/#">加入星移</nuxt-link></li>
+						<li><nuxt-link to="/#">联系我们</nuxt-link></li>
 					</ul>
 				</div>
 			</div>
@@ -106,6 +107,9 @@ top1_h=50px
 								public_icon(#e1e1e1,7px)
 							&:after
 								public_icon(#fff,5px)
+				&:nth-of-type(2)
+					a
+						color #999
 				img
 					vertical-align middle
 				span
@@ -117,6 +121,7 @@ top1_h=50px
 					width 160px
 					position relative
 					input
+						box-sizing content-box
 						font-size 12px
 						width 100px
 						height 30px
@@ -137,7 +142,6 @@ top2_h=80px
 		container()
 		.top2_left
 			float left
-			width 40%
 			height 40px
 			padding 20px 0
 			img
@@ -150,11 +154,10 @@ top2_h=80px
 				font-weight bolder
 		.game_list
 			float right
-			width 60%
 			li
 				float left
 				line-height top2_h
-				width (100/5)%
+				width 120px
 				text-align right
 				a
 					font-size 19px

@@ -1,5 +1,6 @@
 <template>
 	<div class="flex2 clearfix bgColor pt3 box">
+		<about></about>
 		<ul class="grey font18 div1 tr ul_left wrBorder1 clearfix fl">
 			<li>2018-5</li>
 			<li>2018-2</li>
@@ -13,47 +14,51 @@
 					<h1>伊步慈善，一个有爱的健康倡导者</h1>
 					<p>5月22日，广东伊步网络科技有限公司与深圳市慈善会成立的深圳市慈善会伊步慈善基金正式挂牌运营了</p>
 				</div>
-				<img src="../../../static/about_img/one.png">
+				<img src="/about_img/one.png">
 			</li>
 			<li class="clearfix">
 				<div>
 					<h1>2018年年会</h1>
 					<p>大步跨过了2017年，我们用汗水耕耘，去描绘伊步更好的未来</p>
 				</div>
-				<img src="../../../static/about_img/two.png">
+				<img src="/about_img/two.png">
 			</li>
 			<li class="clearfix">
 				<div>
 					<h1>伊步三周年庆</h1>
 					<p>这一路辛勤汗水浇灌成功的幼苗，智慧的力量引来蜂蝶飞舞，齐心协力共同奋斗，迎接伊步三周年庆典</p>
 				</div>
-				<img src="../../../static/about_img/three.png">
+				<img src="/about_img/three.png">
 			</li>
 			<li class="clearfix">
 				<div>
 					<h1>2017年年会</h1>
 					<p>伴随着欢乐的乐曲，伊步迎接2017年的年会</p>
 				</div>
-				<img src="../../../static/about_img/four.png">
+				<img src="/about_img/four.png">
 			</li>
 			<li class="clearfix">
 				<div>
 					<h1>伊步两周年庆</h1>
 					<p>走过了收获的秋天，寒冷的冬天，希望的春天，我们迎来了充满期待的夏天，我们满情壮志的迎来了公司二周年庆典</p>
 				</div>
-				<img src="../../../static/about_img/five.png">
+				<img src="/about_img/five.png">
 			</li>
 		</ul>
 	</div>
 </template>
 
 <script>
+import about from '../../components/about.vue'
 export default {
   name: 'prog',
   data () {
     return {
       
     }
+  },
+  components:{
+  	about
   }
 }
 </script>

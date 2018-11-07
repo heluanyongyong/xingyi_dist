@@ -1,9 +1,10 @@
 <template>
 	<div class="bgColor pd3">
+		<about></about>
 		<div class="bgWhite mg50">
 			<ul class="ul tl">
 				<li class="clearfix">
-					<img src="../../../static/about_img/wyw.png" class="w30 fl">
+					<img src="/about_img/wyw.png" class="w30 fl">
 					<div class="fr w70 ml2 tl">
 						<p class="font16">王廷伟</p>
 						<p class="font12 p">公司创始人兼CEO</p>
@@ -15,14 +16,14 @@
 						<p class="font16">许锡栾<span class="font12 ml2">副总监</span></p>
 						<p class="font9 grey p">从事多年移动广告技术开发与应用，另有丰富的手机游戏研发技术与经验积累；国内最早从事研发与运用H5网页技术； 曾运用H5技术参与搭建深圳移动无线城市系统，用户量达千万级、日活跃用户百万级；曾负责中国移动、中国联通多个省市的技术支撑；现为伊步科技核心技术团队负责人之一，为公司各项业务技术提供有力支撑。</p>
 					</div>
-					<img src="../../../static/about_img/xxl.png" class="w30 ml2 fr">					
+					<img src="/about_img/xxl.png" class="w30 ml2 fr">					
 				</li>
 				<li class="clearfix borno">
 					<div class="fl w70">
 						<p class="font16">吴 斌<span class="font12 ml2">市场总监</span></p>
 						<p class="font9 grey p">拥有广电系统的对接政府部门宣传，主持的经历，并以此得过省内各奖项； 通过奈瑞儿塑身美颜的市场营销工作经历对IPO上市有着深刻理解，并成为瑞典ITRIM大中华区项目负责人；◆ 拥有丰富的团队带领经验，目前负责为伊步搭建一个高效、完整的业务团</p>
 					</div>
-					<img src="../../../static/about_img/wb.png" class="w30 ml2 fr">					
+					<img src="/about_img/wb.png" class="w30 ml2 fr">					
 				</li>
 			</ul>
 		</div>
@@ -30,12 +31,16 @@
 </template>
 
 <script>
+import about from '../../components/about.vue'
 export default {
   name: 'team',
   data () {
     return {
       
     }
+  },
+  components:{
+  	about
   }
 }
 </script>

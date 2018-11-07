@@ -1,22 +1,9 @@
 <template>
-	<div class="main">
-		<topbar></topbar>
-		<nuxt/>
-		<footbar></footbar>
-	</div>
+  <div>
+    123
+    <nuxt/>
+  </div>
 </template>
-<style lang="stylus">
-@import '../assets/public.styl'
-.main
-	min-width 1000px
+
+<style>
 </style>
-<script>
-import topbar from '../components/topbar.vue'
-import footbar from '../components/footbar.vue'
-export default{
-	components:{
-		topbar,
-		footbar
-	}
-}
-</script>

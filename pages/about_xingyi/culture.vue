@@ -1,5 +1,6 @@
 <template>
 	<div class="bgColor">
+		<about></about>
 		<div class="box pd3">
 			<div>
 				<h2>星移盒子</h2>
@@ -20,12 +21,16 @@
 </template>
 
 <script>
+import about from '../../components/about.vue'
 export default {
   name: 'culture',
   data () {
     return {
       
     }
+  },
+  components:{
+  	about
   }
 }
 </script>

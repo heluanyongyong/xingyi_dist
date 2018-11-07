@@ -237,7 +237,6 @@
 </style>
 <script>
 export default{
-	layout:'top',
 	methods:{
 		change_list(index){
 			$('.center .game_list ul li').eq(index).find('a').css('color','#FD8F24').parent('li').siblings().find('a').css('color','#000');

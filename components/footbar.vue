@@ -55,6 +55,8 @@
 			public_bottom()
 			li
 				display inline-block
+				a
+					color #888
 		.comment
 			public_bottom()
 			padding-bottom 40px

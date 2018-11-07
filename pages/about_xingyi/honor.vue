@@ -1,5 +1,6 @@
 <template>
 	<div class="bgColor">
+		<about></about>
 		<ul class="ul tl mg50 pd3">
 			<li class="clearfix li">
 				<div class="fl w70">
@@ -7,7 +8,7 @@
 					<p>荣誉证书</p>
 					<div>我们一步一脚印，坚持稳中求进；不断创新，不断发展</div>
 				</div>
-				<img src="../../../static/about_img/zc2@2x.png" class="fr w30">
+				<img src="/about_img/zc2@2x.png" class="fr w30">
 			</li>
 			<li class="clearfix li">
 				<div class="fl w70">
@@ -15,7 +16,7 @@
 					<p>荣誉证书</p>
 					<div>我们一步一脚印，坚持稳中求进；不断创新，不断发展</div>
 				</div>
-				<img src="../../../static/about_img/zc2@2x.png" class="fr w30">
+				<img src="/about_img/zc2@2x.png" class="fr w30">
 			</li>
 			<li class="clearfix li">
 				<div class="fl w70">
@@ -23,19 +24,23 @@
 					<p>荣誉证书</p>
 					<div>我们一步一脚印，坚持稳中求进；不断创新，不断发展</div>
 				</div>
-				<img src="../../../static/about_img/zc2@2x.png" class="fr w30">
+				<img src="/about_img/zc2@2x.png" class="fr w30">
 			</li>
 		</ul>
 	</div>
 </template>
 
 <script>
+import about from '../../components/about.vue'
 export default {
   name: 'honor',
   data () {
     return {
       
     }
+  },
+  components:{
+  	about
   }
 }
 </script>

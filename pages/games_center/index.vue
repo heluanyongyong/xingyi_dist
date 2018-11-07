@@ -29,7 +29,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-for="item in 17" :key="item">
+								<tr v-for="item in 15" :key="item">
 									<td>王者归来...</td>
 									<td>10.29 14:00</td>
 									<td>王者归来...</td>
@@ -67,6 +67,7 @@
     					</ul>
     				</div>
     			</div>
+    			<div class="clear"></div>
     		</div>
     	</div>
     </div>
@@ -78,8 +79,7 @@ export default{
     	return{
     		
     	}
-    },
-    layout:'top'
+    }
 }
 </script>
 
@@ -90,7 +90,6 @@ export default{
 		width 100%
 .center
 	padding 45px 0
-	height 920px
 	background rgba(248,248,248,1)
 	.container
 		container()
@@ -98,10 +97,11 @@ export default{
 			float left
 			width 25%
 			public_content_left()
-				width 90%
+				width 92%
 				background white
 				color #666666
 				font-size 22px
+				margin-left -5px
 			.content_left_top
 				public_content_left()
 				.warp
@@ -121,13 +121,14 @@ export default{
 								color #FD8F24
 			.content_left_bottom
 				/*若改变此处，需要改变右边边对应上边距*/
-				margin-top 29px
+				margin-top 43px
 				public_content_left()
 				.title
 					padding 20px 0 10px 15px
 					bold()
 					letter-spacing 6px
 				table
+					width 100%
 					public_tr(col,font,bg,pd)
 						color col
 						font-size font
@@ -145,6 +146,12 @@ export default{
 					tbody
 						tr
 							public_tr(#666,13px,#fff,7px)
+							td
+								font-size 12px
+							td:first-child
+								padding-left 5px
+							td:last-child
+								padding-right 5px
 					tfoot
 						tr
 							td
@@ -176,7 +183,7 @@ export default{
 						float left
 						width 20%
 						/*若改变此处，需要改变左边对应上边距*/
-						margin-top 28px
+						margin-top 25px
 						.content
 							width 95%
 							margin 0 2.5%
