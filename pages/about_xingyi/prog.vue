@@ -1,14 +1,14 @@
 <template>
-	<div class="flex2 clearfix bgColor pt3 box">
+	<div class="flex2 clearfix bgColor box">
 		<about></about>
-		<ul class="grey font18 div1 tr ul_left wrBorder1 clearfix fl">
+		<ul class="grey font18 div1 tr ul_left wrBorder1 clearfix fl mg3">
 			<li>2018-5</li>
 			<li>2018-2</li>
 			<li>2017-7</li>
 			<li>2017-2</li>
 			<li>2016-7</li>
 		</ul>
-		<ul class="ul_right tl fr">
+		<ul class="ul_right tl fr pt3">
 			<li class="clearfix">
 				<div>
 					<h1>伊步慈善，一个有爱的健康倡导者</h1>
@@ -98,5 +98,8 @@ h1{
 	margin-top: 1rem;
 	font-size: 0.9rem;
 	color: #999999;
+}
+.mg3{
+	margin-top: 3rem;
 }
 </style>

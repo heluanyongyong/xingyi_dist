@@ -1,7 +1,7 @@
 <template>
-	<div class="bgColor pd3">
+	<div class="bgColor target">
 		<about></about>
-		<div class="bgWhite mg50">
+		<div class="bgColor mg50 target">
 			<ul class="ul tl">
 				<li class="clearfix">
 					<img src="/about_img/wyw.png" class="w30 fl">
@@ -23,7 +23,7 @@
 						<p class="font16">吴 斌<span class="font12 ml2">市场总监</span></p>
 						<p class="font9 grey p">拥有广电系统的对接政府部门宣传，主持的经历，并以此得过省内各奖项； 通过奈瑞儿塑身美颜的市场营销工作经历对IPO上市有着深刻理解，并成为瑞典ITRIM大中华区项目负责人；◆ 拥有丰富的团队带领经验，目前负责为伊步搭建一个高效、完整的业务团</p>
 					</div>
-					<img src="/about_img/wb.png" class="w30 ml2 fr">					
+					<img src="/about_img/wb.png" class="w30 ml2 fr">			
 				</li>
 			</ul>
 		</div>
@@ -46,11 +46,11 @@ export default {
 </script>
 
 <style scoped>
+.target{
+	padding:3rem 0 1.5rem 0;
+}
 .pd2{
 	padding: 2rem;
-}
-.bgColor{
-	background-color: #F8F8F8;
 }
 .p{
 	margin-top: 1rem;
@@ -63,6 +63,7 @@ export default {
 }
 .ul li{
 	/*margin: 3rem;*/
+	background-color: white;
 	padding: 3rem;
 	border-bottom:1px solid #E0E0E0;
 }
@@ -70,4 +71,8 @@ export default {
     border-bottom: none;
 }
 .ul span{margin-left: 2%}
+.mg3{
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
 </style>
