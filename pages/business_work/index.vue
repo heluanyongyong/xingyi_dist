@@ -53,5 +53,10 @@
 </style>
 <script>
 export default{
+	mounted(){
+		$(function(){
+			alert('123');
+		});
+	}
 }
 </script>
