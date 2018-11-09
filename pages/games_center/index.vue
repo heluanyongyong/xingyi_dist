@@ -9,12 +9,12 @@
     				<div class="content_left_top">
     					<div class="warp">
     						<div class="title">热门标签</div>
-		    				<ul>
-		    					<li><a href="javascript:void(0);" class="active">棋牌</a></li>
-		    					<li><a href="javascript:void(0);">篮球</a></li>
-		    					<li><a href="javascript:void(0);">单机</a></li>
-		    					<li><a href="javascript:void(0);">免费</a></li>
-		    					<li><a href="javascript:void(0);">职业</a></li>
+		    				<ul class="listtitle">
+		    					<li><a href="javascript:void(0);" @click="change_listtitle(0)">棋牌</a></li>
+		    					<li><a href="javascript:void(0);" @click="change_listtitle(1)">篮球</a></li>
+		    					<li><a href="javascript:void(0);" @click="change_listtitle(2)">单机</a></li>
+		    					<li><a href="javascript:void(0);" @click="change_listtitle(3)">免费</a></li>
+		    					<li><a href="javascript:void(0);" @click="change_listtitle(4)">职业</a></li>
 		    				</ul>
     					</div>
     				</div>
@@ -49,10 +49,10 @@
     			</div>
     			<div class="content_right">
     				<div class="gametitle">
-    					<a href="javascript:void(0);">所有游戏</a>
-    					<a href="javascript:void(0);">热门游戏</a>
-    					<a href="javascript:void(0);">手机游戏</a>
-    					<a href="javascript:void(0);">网页游戏</a>
+    					<a href="javascript:void(0);" @click="change_gametitle(0)" class="active">所有游戏</a>
+    					<a href="javascript:void(0);" @click="change_gametitle(1)">热门游戏</a>
+    					<a href="javascript:void(0);" @click="change_gametitle(2)">手机游戏</a>
+    					<a href="javascript:void(0);" @click="change_gametitle(3)">网页游戏</a>
     				</div>
     				<div class="gamecontent">
     					<ul>
@@ -78,6 +78,17 @@ export default{
     data(){
     	return{
     		
+    	}
+    },
+    methods:{
+    	// 改变游戏列表、游戏列表颜色切换，游戏标签初始化(默认颜色)
+    	change_gametitle(index){
+    		$('.gametitle').find('a').eq(index).addClass('active').siblings().removeClass('active');
+    		$('.listtitle li a').removeClass('active');
+    	},
+    	// 改变游戏标签列表、游戏标签颜色切换
+    	change_listtitle(index){
+    		$('.listtitle li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
     	}
     }
 }
@@ -138,20 +149,28 @@ export default{
 						td
 							width (100/3)%
 							padding pd 0
+					public_td()
+						td:first-child
+							padding-left 5px
+						td:last-child
+							padding-right 5px
 					thead
 						tr
 							public_tr(#333,16px,#efefef,15px)
 							td
 								bold()
+								font-size 15px
+							public_td()
 					tbody
 						tr
 							public_tr(#666,13px,#fff,7px)
+							&:hover
+								td
+									color #FD8F24
+									cursor pointer
 							td
 								font-size 12px
-							td:first-child
-								padding-left 5px
-							td:last-child
-								padding-right 5px
+							public_td()
 					tfoot
 						tr
 							td
@@ -177,6 +196,8 @@ export default{
 					margin-right 50px
 					color #010101
 					font-size 20px
+					&.active
+						color #FD8F24
 			.gamecontent
 				ul
 					li

@@ -4,7 +4,7 @@
 			<div class="container">
 				<div class="top1_left">星移网络科技有限公司</div>
 				<ul class="top1_right">
-					<li>
+					<li @mouseover="pos_show" @mouseout="pos_hide">
 						<a href="javascript:void(0);"><img src="/games_center/20150815125126_XdBAr.thumb.700_0@2x.png" alt=""></a>
 						<span><a href="javascript:void(0);" class="active">星移盒子</a></span>
 						<div class="active_box hide">
@@ -27,10 +27,11 @@
     	</div>
     	<div class="top2">
 			<div class="container">
-				<div class="top2_left">
+				<!-- <div class="top2_left">
 					<img src="/games_center/图层 1@2x.png" alt="">
 					<span>星移盒子</span>
-				</div>
+				</div> -->
+				<img class="navimg" src="/games_center/组 10@2x.png" alt="">
 				<div class="game_list">
 					<ul>
 						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
@@ -39,6 +40,7 @@
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
 						<li><nuxt-link to="/#">加入星移</nuxt-link></li>
 						<li><nuxt-link to="/#">联系我们</nuxt-link></li>
+						<li><nuxt-link to="/#">充值中心</nuxt-link></li>
 					</ul>
 				</div>
 			</div>
@@ -84,13 +86,13 @@ top1_h=50px
 						padding 7px 0
 						text-indent 10px
 						div
+							&:first-child
+								color #FD8F24
 							cursor pointer
-							img
-								vertical-alilgn middle
-							span
-								vertical-alilgn middle
-								&.active
-									color #FD8F24
+							height 25px
+							line-height 25px
+							&:hover
+								background lightgray
 							public_icon(color,size)
 								content ''
 								position absolute
@@ -107,9 +109,8 @@ top1_h=50px
 								public_icon(#e1e1e1,7px)
 							&:after
 								public_icon(#fff,5px)
-				&:nth-of-type(2)
-					a
-						color #999
+				a
+					color #999
 				img
 					vertical-align middle
 				span
@@ -140,10 +141,13 @@ top2_h=80px
 	border 1px solid #e1e1e1
 	.container
 		container()
-		.top2_left
+		.navimg
+			margin-top 12px
+		/*.top2_left
 			float left
 			height 40px
 			padding 20px 0
+			width 20%
 			img
 				height 40px
 				vertical-align middle
@@ -151,20 +155,35 @@ top2_h=80px
 				height 30px
 				vertical-align middle
 				font-size 20px
-				font-weight bolder
+				font-weight bolder*/
 		.game_list
 			float right
-			li
-				float left
-				line-height top2_h
-				width 120px
-				text-align right
-				a
-					font-size 19px
-					color #888
-					/*路由颜色*/
-					&.nuxt-link-active
-						color #FD8F24
+			height top2_h
+			width 80%
+			ul
+				height top2_h
+				width 100%
+				li
+					float left
+					margin 0 15px
+					line-height top2_h
+					text-align right
+					a
+						font-size 19px
+						color #888
+						/*路由颜色*/
+						&.nuxt-link-active
+							color #FD8F24
 </style>
 <script>
+export default{
+	methods:{
+		pos_show(){
+			$('.active_box').removeClass('hide');
+		},
+		pos_hide(){
+			$('.active_box').addClass('hide');
+		}
+	}
+}
 </script>

@@ -75,9 +75,9 @@
 					</div>
 				</div>
 				<div class="bottom">
-					<ol>
-						<li><a href="">游戏壁纸</a></li>
-						<li><a href="" class="active">游戏截图</a></li>
+					<ol class="imglist">
+						<li><a href="javascript:void(0)" @click="change_imglist(0)">游戏壁纸</a></li>
+						<li><a href="javascript:void(0)" @click="change_imglist(1)" class="active">游戏截图</a></li>
 					</ol>
 					<div class="clear"></div>
 					<ul>
@@ -241,6 +241,9 @@ export default{
 		change_list(index){
 			$('.center .game_list ul li').eq(index).find('a').css('color','#FD8F24').parent('li').siblings().find('a').css('color','#000');
 			$('.center .game_content>div').eq(index).addClass('active').siblings().removeClass('active');
+		},
+		change_imglist(index){
+			$('.imglist li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
 		}
 	}
 }

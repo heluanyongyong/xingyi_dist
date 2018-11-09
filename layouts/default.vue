@@ -5,7 +5,7 @@
 		<footbar></footbar>
 	</div>
 </template>
-<style lang="stylus">
+<style scoped lang="stylus">
 @import '../assets/public.styl'
 .main
 	min-width 1000px
