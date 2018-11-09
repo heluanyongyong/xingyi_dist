@@ -38,7 +38,6 @@ export default {
 <style scoped>
 h2{
 	text-align: center;
-	/*margin-top: 3rem;*/
 }
 .box{
 	margin: 0 15%;
@@ -46,7 +45,7 @@ h2{
 .box p{
 	text-indent: 2em;
 	margin: 3rem 0;
-	font-size: 1rem;
+	font-size: 10px;
 	color: #666666;
 }
 </style>
