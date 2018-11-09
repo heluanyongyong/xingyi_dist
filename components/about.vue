@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
-	  <div><img src="/about_img/header.png" alt="图片加载中" class="w100"></div>
-	  <ul class="pd10 ul bgWhite clearfix">
+	  <div><img src="/about_img/header.png" alt="图片加载中..." class="w100"></div>
+	  <ul class="mg15 ul bgWhite clearfix">
 	  	<li><nuxt-link to="/about_xingyi/synopsis" tag="span">公司简介</nuxt-link></li>
 	  	<li><nuxt-link to="/about_xingyi/prog" tag="span">发展历程</nuxt-link></li>
 	  	<li><nuxt-link to="/about_xingyi/culture" tag="span">企业文化</nuxt-link></li>
@@ -32,12 +32,12 @@ export default {
 .nuxt-link-active{
   color: #FD8F24;
 }
-.pd10{
+.mg15{
 	margin: 0 15%;
 }
 .ul li{
-	padding: 1rem;
+	padding: 1%;
 	float: left;
-	margin: 0 2rem;
+	margin: 0 4%;
 }
 </style>

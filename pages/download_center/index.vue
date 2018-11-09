@@ -1,7 +1,7 @@
 <template>
   <div>
     <div  class="download_bgimg1">
-      <div class="mg50 clearfix pd5">
+      <div class="mg50 clearfix pt5">
         <div class="tc fl w30 rel">
           <img src="../../static/down_img/box.png" alt="图片加载中..">
           <img src="../../static/down_img/star.png" alt="图片加载中.." class="abs">
@@ -11,7 +11,7 @@
             <img src="../../static/down_img/text1.png" alt="文字加载中.." class="w50">
           </p>
           <p class="bgYellow black borR20 tc mar0">
-            <img src="../../static/down_img/download.png"> <span><a href="javascript:">下载星移盒子APP</a></span>
+            <img src="../../static/down_img/download.png"> <a href="javascript:" id="a">下载星移盒子APP</a>
           </p>
         </div>
       </div>
@@ -26,8 +26,8 @@
         </div>
     </div>
     <div class="bgBlack tc pd5">
-      <p><img src="../../static/down_img/text3.png" alt="文字加载中.."></p>
-      <ul class="play_ul pd5">
+      <p><img src="../../static/down_img/text3.png" alt="文字加载中.." class="mb5"></p>
+      <ul class="clearfix">
         <li>
           <p><a href="javascript:"><img src="../../static/down_img/strategy.png" alt="图片加载中.."></a></p>
           <p><a href="javascript:">游戏攻略</a></p>
@@ -90,23 +90,30 @@ body .pd0{padding: 0}
 .w70{
   width: 60%;
 }
+.pt5{
+  padding-top: 9rem
+}
 .pd5{
-  padding: 10rem 0;
+  padding: 5rem 0;
 }
 .mb5{
   margin-bottom: 5%;
 }
-.play_ul a{
+a{
   color: #fff;
 }
-.play_ul li{
+li{
   float: left;
   margin-left: 20%;
+  overflow: hidden;
 }
 .bgYellow{
   background-color: #FDD300
 }
 .mt3{
   margin-top: 3rem;
+}
+#a{
+  color: black
 }
 </style>

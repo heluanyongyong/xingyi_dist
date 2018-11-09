@@ -36,6 +36,7 @@
 					<ul>
 						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
 						<li><nuxt-link to="/download_center">下载中心</nuxt-link></li>
+						<li><nuxt-link to="/on_recharge">在线充值</nuxt-link></li>
 						<li><nuxt-link to="/about_xingyi/synopsis">关于星移</nuxt-link></li>
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
 						<li><nuxt-link to="/#">加入星移</nuxt-link></li>

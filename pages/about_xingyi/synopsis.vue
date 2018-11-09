@@ -2,7 +2,7 @@
 	<div class="bgColor">
 			<about></about>
 			<div class=" clearfix box pd3">
-				<img src="/about_img/company.png" alt="图片加载中" class="w30 fl">
+				<img src="/about_img/company.png" alt="图片加载中..." class="w30 fl">
 				<div class="fr w70 mt2">
 					<h2 class="tc">星移网络</h2>
 					<p class="textIn pt3">
