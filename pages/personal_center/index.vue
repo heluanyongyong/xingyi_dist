@@ -121,25 +121,6 @@ export default {
 
 <style scoped>
 /*模态框*/
-.modal{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.5);
-	position: fixed;
-    top: 0;
-    left: 0;
-}
-.modal_box{
-	width: 527px;
-	height: 400px;
-	position: fixed;
-	background:rgba(255,255,255,1);
-	top: 25%;
-	left: 25%;
-	bottom: 25%;
-	right: 25%;
-	padding: 40px 0 0 62px;
-}
 .modal_box input{
 	padding-left: 10px;
 }
@@ -162,7 +143,7 @@ export default {
 }
 /*左边列表样式*/
 h1{
-	padding: 55px 0 0  42px;
+	padding: 55px 0 30px  42px;
 }
 .div_left{
 	width: 258px;
