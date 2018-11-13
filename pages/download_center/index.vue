@@ -99,7 +99,9 @@ li a{
 }
 li{
   float: left;
-  margin-left: 123px;
+}
+li:nth-child(2){
+  margin: 0 230px;
 }
 .bgYellow{
   background-color: #FDD300
