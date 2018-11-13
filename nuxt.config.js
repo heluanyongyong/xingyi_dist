@@ -37,14 +37,21 @@ module.exports = {
     },
     plugins:[
       new webpack.ProvidePlugin({
-        '$':'jquery'
+          '$':'jquery'
       })
-    ]
+    ],
+    vender:['element-ui']
   },
+  plugins: [
+    {src:'~plugins/element-ui', ssr: true}
+  ],
   css: [
     {
       src: '~assets/reset.styl',
       lang: 'styl'
+    },
+    {
+      src:'element-ui/lib/theme-chalk/index.css'
     }
   ]  
 }

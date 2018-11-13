@@ -4,17 +4,26 @@
 			<div class="container">
 				<div class="top1_left">星移网络科技有限公司</div>
 				<ul class="top1_right">
-					<li @mouseover="pos_show" @mouseout="pos_hide">
+					<!-- <li @mouseover="pos_show" @mouseout="pos_hide">
 						<a href="javascript:void(0);"><img src="/games_center/20150815125126_XdBAr.thumb.700_0@2x.png" alt=""></a>
 						<span><a href="javascript:void(0);" class="active">星移盒子</a></span>
 						<div class="active_box hide">
 							<div><img src="/games_center/用户中心@2x.png" alt=""><span>用户中心</span></div>
 							<div><img src="/games_center/退出@2x.png" alt=""><span> 退出</span></div>
 						</div>
+					</li> -->
+					<li>
+						<nuxt-link to="/login" class="active">登陆</nuxt-link>
+						 | 
+						<nuxt-link to="/login/register">注册</nuxt-link>
+					</li>
+					<li>
+						<a href="javascript:void(0);"><img src="/games_center/消息@2x.png" alt=""></a>
+						<span><a href="javascript:void(0);">消息</a></span>
 					</li>
 					<li>
 						<a href="javascript:void(0);"><img src="/games_center/退出@2x.png" alt=""></a>
-						<span><a href="javascript:void(0);">退出</a></span>
+						<span><nuxt-link to="/">退出</nuxt-link></span>
 					</li>
 					<li>
 						<div class="pos_div">
@@ -31,7 +40,7 @@
 					<img src="/games_center/图层 1@2x.png" alt="">
 					<span>星移盒子</span>
 				</div> -->
-				<img class="navimg" src="/games_center/组 10@2x.png" alt="">
+				<img class="navimg" src="/games_center/组 10@2x.png" alt="" @click="click_logo">
 				<div class="game_list">
 					<ul>
 						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
@@ -39,9 +48,6 @@
 						<li><nuxt-link to="/on_recharge">在线充值</nuxt-link></li>
 						<li><nuxt-link to="/about_xingyi/synopsis">关于星移</nuxt-link></li>
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
-						<li><nuxt-link to="/#">加入星移</nuxt-link></li>
-						<li><nuxt-link to="/#">联系我们</nuxt-link></li>
-						<li><nuxt-link to="/#">充值中心</nuxt-link></li>
 					</ul>
 				</div>
 			</div>
@@ -71,7 +77,7 @@ top1_h=50px
 				margin-left 15px
 				line-height top1_h
 				color #999
-				&:first-child
+				/*&:first-child
 					position relative
 					.active_box
 						position absolute
@@ -109,16 +115,13 @@ top1_h=50px
 							&:before
 								public_icon(#e1e1e1,7px)
 							&:after
-								public_icon(#fff,5px)
+								public_icon(#fff,5px)*/
 				a
 					color #999
-				img
-					vertical-align middle
-				span
-					margin-left 5px
-					vertical-align middle
-					a.active
+					&:hover
 						color #FD8F24
+				img,a
+					vertical-align middle
 				.pos_div
 					width 160px
 					position relative
@@ -144,6 +147,7 @@ top2_h=80px
 		container()
 		.navimg
 			margin-top 12px
+			cursor pointer
 		/*.top2_left
 			float left
 			height 40px
@@ -163,8 +167,9 @@ top2_h=80px
 			width 80%
 			ul
 				height top2_h
-				width 100%
+				float right
 				li
+					width 120px
 					float left
 					margin 0 15px
 					line-height top2_h
@@ -179,11 +184,8 @@ top2_h=80px
 <script>
 export default{
 	methods:{
-		pos_show(){
-			$('.active_box').removeClass('hide');
-		},
-		pos_hide(){
-			$('.active_box').addClass('hide');
+		click_logo(){
+			this.$router.push('/download_center');
 		}
 	}
 }

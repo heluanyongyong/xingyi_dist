@@ -2,7 +2,7 @@
 	<div>
 		<div class="loginheader">
 			<ul>
-				<li><img src="/login/组 10@2x.png" alt=""></li>
+				<li><img @click="click_logo" src="/login/组 10@2x.png" alt=""></li>
 				<li class="line"></li>
 				<li><span>登陆</span></li>
 			</ul>
@@ -30,9 +30,15 @@
 				height 100%
 				width 1px
 				background rgba(238,238,238,1)
+			img
+				cursor pointer
 </style>
 <script>
 export default{
-
+	methods:{
+		click_logo(){
+			this.$router.push('/download_center');
+		}
+	}
 }
 </script>

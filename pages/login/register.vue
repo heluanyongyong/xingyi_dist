@@ -4,7 +4,7 @@
 			<div class="register_div">
 				<div class="register_top">
 					<span class="span_left">欢迎注册星移帐号</span>
-					<span class="span_right">已有帐号？<nuxt-link to="/" class="active">立即登陆</nuxt-link></span>
+					<span class="span_right">已有帐号？<nuxt-link to="/login" class="active">立即登录</nuxt-link></span>
 				</div>
 				<div class="register_content">
 					<input class="input_text" type="text" placeholder="请输入帐号">
@@ -14,7 +14,7 @@
 					<input class="input_text" type="text" placeholder="请输入身份证号码">
 					<div class="check_read">
 						<input type="checkbox" class="input_checkbox">
-						<span>我已阅读并同意<a href="" class="active">《星移网络使用协议》</a></span>
+						<span class="agree">我已同意</span><span class="sign">《</span><nuxt-link to="/login/agreement" class="active">星移网络用户服务协议和用户隐私政策</nuxt-link><span class="sign">》</span>
 					</div>
 					<button  class="button_active" @click="check_register">注册</button>
 				</div>
@@ -40,18 +40,22 @@
 	.register_content
 		padding 25px 0 0 0
 		.check_read
-			margin 10px 0
-			input,span
+			margin 15px 0
+			input,span,a
 				vertical-align middle
-			span
+			.agree
 				margin-left 5px
+			a
+				font-size 15px
+			.sign
+				color
 </style>
 <script>
 export default{
 	layout:'login',
 	methods:{
 		check_register(){
-			this.$router.push('/phone_bind');
+			this.$router.push('/login/phone_bind');
 		}
 	}
 }

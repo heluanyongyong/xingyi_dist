@@ -8,7 +8,7 @@
 <style scoped lang="stylus">
 @import '../assets/public.styl'
 .main
-	min-width 1000px
+	min-width 1250px
 	background #fff
 </style>
 <script>
