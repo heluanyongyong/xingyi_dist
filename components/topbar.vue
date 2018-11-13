@@ -8,7 +8,7 @@
 						<a href="javascript:void(0);"><img src="/games_center/20150815125126_XdBAr.thumb.700_0@2x.png" alt=""></a>
 						<span><a href="javascript:void(0);" class="active">星移盒子</a></span>
 						<div class="active_box hide">
-							<div><img src="/games_center/用户中心@2x.png" alt=""><span>用户中心</span></div>
+							<div><nuxt-link to="/personal_center"><img src="/games_center/用户中心@2x.png" alt=""><span>用户中心</span></nuxt-link></div>
 							<div><img src="/games_center/退出@2x.png" alt=""><span> 退出</span></div>
 						</div>
 					</li> -->

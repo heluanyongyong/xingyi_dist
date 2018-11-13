@@ -1,17 +1,17 @@
 <template>
 	<div class="bgColor ptb3">
-		<div class="mg50 bgWhite pd3">
-			<table class="w100">
+		<div class="bgWhite ptb3 container">
+			<table class="w100 margin">
 				<tbody>
 					<tr class="one">
 						<td>充值账号：</td>
-						<td><input type="text" name="name" value="星移"></td>
+						<td><input type="text" name="name" value="星移"><span>更改帐号</span></td>
 					</tr>
 					<tr class="two">
 						<td>充值游戏：</td>
 						<td>						
 							<span class="rel">
-								<input type="text" name="game" value="泡泡堂"><button><img src="/recharge_img/down.png" @click="isShow=!isShow"></button>
+								<input type="text" name="game" value="泡泡堂"><button @click="isShow=!isShow"><img src="/recharge_img/down.png"></button>
 								<img src="/recharge_img/img.png" class="abs" v-show="isShow">
 							</span>
 							&nbsp;&nbsp;
@@ -39,8 +39,8 @@
 								<button>10元</button>
 								<button>10元</button>
 							</p>
-							<p>
-								其他&nbsp;<input type="text" name="num" class="tc line">
+							<p class="other">
+								<span class="font18">其他</span>&nbsp;<input type="text" name="num" class="tc">
 							</p>
 						</td>
 					</tr>
@@ -55,16 +55,19 @@
 				</tbody>
 			</table>
 			<ul class="tc tabBd">
+				<!-- 微信支付 -->
 				<li class="block">
 					<p class="font12 mb10">微信支付<span class="orange">1000.00</span>元</p>
-					<p><img src="/recharge_img/ewm.png" class="w10"></p>
+					<p><img src="/recharge_img/ewm.png"></p>
 				</li>
+				<!-- 支付宝支付 -->
 				<li>
 					<p class="font12 mb10">支付宝支付<span class="orange">1000.00</span>元</p>
-					<p><img src="/recharge_img/ewm.png" class="w10"></p>
+					<p><img src="/recharge_img/ewm.png"></p>
 				</li>
+				<!-- 网银支付 -->
 				<li class="clearfix">
-					<div class="fl ml1">选择银行：</div>
+					<div class="fl ml1 font18">选择银行：</div>
 					<div class="five fl ml2">
 						<p>
 							<span><input type="radio" name=""><img src="/recharge_img/img1.png"></span>
@@ -87,6 +90,7 @@
 							<span><input type="radio" name=""><img src="/recharge_img/img12.png"></span>
 						</p>
 					</div>
+					<div><button id="but">立即充值</button></div>
 				</li>
 			</ul>
 		</div>
@@ -111,6 +115,15 @@ export default {
 </script>
 
 <style scoped>
+.margin{
+	margin: 0 73px;
+}
+td,button,input{
+	font-size: 18px;
+}
+li>p{
+	font-size: 24px;
+}
 .rel{
 	position: relative;
 }
@@ -122,22 +135,40 @@ export default {
 input,button{
 	outline: none;
 	border: 1px solid #DBDBDB;
+	height: 50px;
+	line-height: 48px;	
 }
- .one input{
- 	padding: 1%;
- }
+button{
+	padding: -1px 10px;
+}
+input{
+	padding: 0 10px;
+}
+.one span{
+	font-size: 22px;
+	color: #FD8F24;
+	margin-left: 22px;
+}
  .two input, .two button{
- 	padding: 1%;
  	border: 1px solid #FD8F24;
  }
  .two button{
  	border-left: none;
  	background-color: #FFF0DA;
  }
+ .other{
+ 	width: 370px;
+ }
+ .other input{
+ 	width: 287px;
+ 	height: 38px;
+ 	line-height: 38px;
+ 	margin-left: 10px;
+ }
  .three button{
- 	padding: 1% 3%;
- 	margin-right: 2%;
  	background-color: #F8F8F8;
+ 	width: 93px;
+ 	margin-right: 15px;
  }
  .three p{
  	margin-bottom: 10px;
@@ -145,7 +176,6 @@ input,button{
  .three p:last-child{
  	border: 1px solid #DBDBDB;
  	background-color: #F8F8F8;
- 	width: 30%;
  	padding: 5px 0;
  	margin: 0;
  	padding-left: 10px;
@@ -153,14 +183,17 @@ input,button{
  }
  .four button{
  	background-color: #fff;
- 	padding: 1% 3%;
- 	margin-right: 10px;
+ 	margin-right: 20px;
+ 	padding: 0 24px;
  }
  .five img{
  	vertical-align: middle;
- 	margin: 0 10px;
- 	margin-bottom: 10px;
- 	width: 20%;
+ 	margin: 0 26px 17px 10px;
+ }
+ .five input{
+ 	vertical-align: middle;
+ 	width: 18px;
+ 	height: 18px;
  }
  td{
  	padding: 10px;
@@ -171,10 +204,7 @@ input,button{
 .bg_yes{
  	background: url(/recharge_img/yes.png) no-repeat right top;
  	border: 1px solid #FD8F24;
- }
- .line{
- 	line-height: 26px;
- 	/*margin-right: 10px;*/
+ 	background-color: #F8F8F8;
  }
  .sub{
  	font-size: 10px;
@@ -193,19 +223,24 @@ input,button{
  .mb10{
  	margin-bottom: 10px;
  }
- .w10{
- 	width: 10%;
- }
 .ml1{
-	margin-left: 8px;
+	margin-left: 82px;
 }
 .ml2{
-	margin-left: 48px;
+	margin-left: 52px;
 }
 ul{
 	margin-top: 20px;
 }
 ul>li{
   display: none;
+}
+#but{
+	width:300px;
+	height:60px;
+	background:rgba(253,143,36,1);
+	border-radius:6px;
+	color: white;
+	margin-top: 85px;
 }
 </style>

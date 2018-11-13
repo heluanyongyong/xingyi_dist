@@ -1,36 +1,7 @@
 <template>
 	<div class="bgColor">
 		<about></about>
-		<ul class="tl container ptb3 clearfix">
-			<li class="clearfix">
-				<nuxt-link to="/about_xingyi/honor_details" tag="span">
-					<div class="fl">
-						<div>2016-06</div>
-						<p>荣誉证书</p>
-						<div>我们一步一脚印，坚持稳中求进；不断创新，不断发展</div>
-					</div>
-					<img src="/about_img/zc2@2x.png" alt="图片加载中..">
-				</nuxt-link>
-			</li>
-			<li class="clearfix">
-				<div class="fl">
-					<div>2016-06</div>
-					<p>荣誉证书</p>
-					<div>我们一步一脚印，坚持稳中求进；不断创新，不断发展</div>
-				</div>
-				<img src="/about_img/zc2@2x.png" alt="图片加载中..">
-			</li>
-			<li class="clearfix">
-				<div class="fl">
-					<div>2016-06</div>
-					<p>荣誉证书</p>
-					<div>我们一步一脚印，坚持稳中求进；不断创新，不断发展</div>
-				</div>
-				<img src="/about_img/zc2@2x.png" alt="图片加载中..">
-			</li>
-		</ul>
-		<!-- 荣誉详情 -->
-		<!-- <div class="details_box tc container ptb3">
+		<div class="container ptb3 tc">
 			<h3>星移荣誉</h3>
 			<div class="font16 grey">由星移网络发布于：2018-05-16 作者：星移</div>
 			<p>5月22日，深圳星移网络科技有限公司与深圳市慈善会成立的深圳市慈善会伊步慈善基金正式挂牌运营了。星移总经理王廷伟、星移广告
@@ -45,50 +16,34 @@
             <p>星移共享以共享按摩椅以及共享车载按摩垫为桥梁，连接每一颗爱心，只要客户消费使用伊步共享产品，星移都会从收益中拿出相应比例
             的金额作为慈善金，捐赠到深圳市慈善会伊步慈善基金，用于特殊少儿群体的社区关怀、贫困学子教育资助、以及安老扶幼，让更多的人得到
             慈善救助中。</p>
-		</div> -->
+		</div>
 	</div>
 </template>
 
 <script>
 import about from '../../components/about.vue'
 export default {
-  name: 'honor',
+  name: 'HonorDetails',
   data () {
     return {
-      // noShow:false,
-      // show:true
+      
     }
   },
   components:{
   	about
-  },
-  methods:{
-     // details(){
-     // 	this.noShow=true
-     // 	this.show=false
-     // }
   }
 }
 </script>
 
 <style scoped>
-li{
-    background-color: #fff;
-    padding: 50px;
-    margin-bottom: 38px;
+.container p{
+    font-size: 20px;
+    color: #666;
+    text-indent: 2em;
+    text-align: left;
+    margin: 25px 0;
 }
-ul img{
-	float: right;
+.container div{
+	margin-top: 20px;
 }
-.fl div{
-	font-size: 20px;
-	color: #BDBCBC;
-}
-p{
-	font-size: 32px;
-	color: #000000;
-	margin-top: 28px;
-	margin-bottom: 38px;
-}
-
 </style>
