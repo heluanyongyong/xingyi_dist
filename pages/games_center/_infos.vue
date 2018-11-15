@@ -60,7 +60,7 @@
 					</div>
 					<!-- 角色设定 -->
 					<div class="info info4">
-						<a href="javascript:void(0)" class="pos_icon pos_left"><img @click="info4_img_prev" src="/games_list2/择律-付费咨询列表页分割箭头 拷贝@2x.png" alt=""></a>
+						<a href="javascript:void(0)" class="pos_icon pos_left"><img @click="info4_img_prev" src="/games_list2/left.png" alt=""></a>
 						<div class="info4_content">
 							<div class="info4_inner">
 								<div class="left">
@@ -111,7 +111,7 @@
 								<div class="clear"></div>
 							</div>
 						</div>
-						<a href="javascript:void(0)" class="pos_icon pos_right"><img @click="info4_img_next" src="/games_list2/择律-付费咨询列表页分割箭头@2x.png" alt=""></a>
+						<a href="javascript:void(0)" class="pos_icon pos_right"><img @click="info4_img_next" src="/games_list2/right.png" alt=""></a>
 						<div class="clear"></div>
 					</div>
 				</div>
