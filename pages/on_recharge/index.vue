@@ -278,17 +278,17 @@ export default {
         // 额度选择状态
         chooseMoney(index){
         	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
-        	console.log("yes")
+        	$('.other').css("border","none")
         },
         // 其他金额输入框被点击时
         inputText(){
             $('.three>td').children('p').children('span').removeClass('bg_yes');
+            $('.other').css("border","1px solid #FD8F24")
         },
         // 支付方式切换
       	tabChange(index){
             $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
             $(".tabBd>li").hide().eq(index).show();
-            console.log("no")
       	}
   }			
 }
@@ -378,9 +378,15 @@ input{
  	border-left: none;
  	background-color: #FFF0DA;
  }
- .other{
- 	width: 370px;
- }
+
+
+
+
+
+
+
+
+ 
  .other input{
  	width: 287px;
  	height: 38px;
@@ -406,12 +412,14 @@ input{
  	margin-bottom: 10px;
  }
  .three p:last-child{
+ 	width: 368px;
  	border: 1px solid #DBDBDB;
  	background-color: #F8F8F8;
  	padding: 5px 0;
  	margin: 0;
  	padding-left: 10px;
  	font-size: 9px;
+ 	height: 52px;
  }
  .four button{
  	background-color: #fff;

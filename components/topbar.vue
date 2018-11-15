@@ -51,7 +51,7 @@
 						<li><nuxt-link to="/about_xingyi/synopsis">关于星移</nuxt-link></li>
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
 						<li><nuxt-link to="/contact_us">联系我们</nuxt-link></li>
-						<li><nuxt-link to="/#">加入星移</nuxt-link></li>
+						<li><nuxt-link to="/join_us">加入星移</nuxt-link></li>
 					</ul>
 				</div>
 			</div>
