@@ -29,7 +29,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr v-for="item in 15" :key="item">
+								<tr v-for="item in 20" :key="item">
 									<td>王者归来...</td>
 									<td>10.29 14:00</td>
 									<td>王者归来...</td>
