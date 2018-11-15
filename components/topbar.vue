@@ -18,12 +18,14 @@
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
 					<li>
-						<a href="javascript:void(0);"><img src="/games_center/消息@2x.png" alt=""></a>
-						<span><a href="javascript:void(0);">消息</a></span>
+						<div>
+							<a href="javascript:void(0);"><img src="/games_center/消息@2x.png" alt="" @click="$router.push('/message')"></a>
+							<span><nuxt-link to="/message">消息</nuxt-link></span>
+						</div>
 					</li>
 					<li>
-						<a href="javascript:void(0);"><img src="/games_center/退出@2x.png" alt=""></a>
-						<span><nuxt-link to="/">退出</nuxt-link></span>
+						<a href="javascript:void(0);"><img src="/games_center/退出@2x.png" alt="" @click="$router.push('login')"></a>
+						<span><nuxt-link to="/login">退出</nuxt-link></span>
 					</li>
 					<li>
 						<div class="pos_div">
@@ -48,6 +50,8 @@
 						<li><nuxt-link to="/on_recharge">在线充值</nuxt-link></li>
 						<li><nuxt-link to="/about_xingyi/synopsis">关于星移</nuxt-link></li>
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
+						<li><nuxt-link to="/contact_us">联系我们</nuxt-link></li>
+						<li><nuxt-link to="/#">加入星移</nuxt-link></li>
 					</ul>
 				</div>
 			</div>
@@ -120,7 +124,7 @@ top1_h=50px
 					color #999
 					&:hover
 						color #FD8F24
-				img,a
+				img,a,span
 					vertical-align middle
 				.pos_div
 					width 160px
@@ -169,7 +173,7 @@ top2_h=80px
 				height top2_h
 				float right
 				li
-					width 120px
+					width 100px
 					float left
 					margin 0 15px
 					line-height top2_h

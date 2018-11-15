@@ -4,7 +4,7 @@
 			<ul>
 				<li><img @click="click_logo" src="/login/组 10@2x.png" alt=""></li>
 				<li class="line"></li>
-				<li><span>登陆</span></li>
+				<li><span>{{login_state}}</span></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
@@ -35,9 +35,24 @@
 </style>
 <script>
 export default{
+	data(){
+		return{
+			login_state:'登陆'
+		}
+	},
 	methods:{
 		click_logo(){
 			this.$router.push('/download_center');
+		}
+	},
+	// 路由监听改变状态
+	watch:{
+		$route(to,from){
+			switch(to.path){
+				case '/login/register':this.login_state='注册';break;
+				case '/login/phone_bind':this.login_state='注册';break;
+				default:this.login_state='登陆';break;
+			}
 		}
 	}
 }

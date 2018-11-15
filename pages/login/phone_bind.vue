@@ -52,17 +52,12 @@ import model from '../../components/dialog/confirm.vue'
 export default{
 	layout:'login',
 	data() {
-    	return {
-     		register_success_dialog: false
-    	};
+    	return{
+    		
+    	}
     },
 	methods:{
-		register_success(){
-			this.register_success_dialog=false;
-			setTimeout(()=>{
-				this.$router.push('/');
-			},1000);
-		}
+		
 	},
 	components:{
 		model

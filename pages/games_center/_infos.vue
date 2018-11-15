@@ -60,33 +60,99 @@
 					</div>
 					<!-- 角色设定 -->
 					<div class="info info4">
-						<a href="" class="pos_icon pos_left"><img src="/games_list2/择律-付费咨询列表页分割箭头 拷贝@2x.png" alt=""></a>
-						<div class="left">
-							<img src="/games_list2/20140123075905_7671@2x.png" alt="">
+						<a href="javascript:void(0)" class="pos_icon pos_left"><img @click="info4_img_prev" src="/games_list2/择律-付费咨询列表页分割箭头 拷贝@2x.png" alt=""></a>
+						<div class="info4_content">
+							<div class="info4_inner">
+								<div class="left">
+									<img src="/games_list2/20140123075905_7671@2x.png" alt="">
+								</div>
+								<div class="right">
+									<h3 class="title">暗月马戏团</h3>
+									<p>
+										1暗月马戏团在艾泽拉斯的大地上，以经久不衰的演出及稀有道具赢得了足够的尊重。艾鲁作为团长，也是神话般的存在，他的时光瞬移节目总能让年轻的法师观众们报以热烈的追捧。然而艾鲁最后一次前往时光之穴搜集“时光砂”时，却意外的穿越到了一个叫做三国的时代。
+									</p>...
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="info4_inner">
+								<div class="left">
+									<img src="/games_list2/20140123075905_7671@2x.png" alt="">
+								</div>
+								<div class="right">
+									<h3 class="title">暗月马戏团</h3>
+									<p>
+										2暗月马戏团在艾泽拉斯的大地上，以经久不衰的演出及稀有道具赢得了足够的尊重。艾鲁作为团长，也是神话般的存在，他的时光瞬移节目总能让年轻的法师观众们报以热烈的追捧。然而艾鲁最后一次前往时光之穴搜集“时光砂”时，却意外的穿越到了一个叫做三国的时代。
+									</p>...
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="info4_inner">
+								<div class="left">
+									<img src="/games_list2/20140123075905_7671@2x.png" alt="">
+								</div>
+								<div class="right">
+									<h3 class="title">暗月马戏团</h3>
+									<p>
+										3暗月马戏团在艾泽拉斯的大地上，以经久不衰的演出及稀有道具赢得了足够的尊重。艾鲁作为团长，也是神话般的存在，他的时光瞬移节目总能让年轻的法师观众们报以热烈的追捧。然而艾鲁最后一次前往时光之穴搜集“时光砂”时，却意外的穿越到了一个叫做三国的时代。
+									</p>...
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="info4_inner">
+								<div class="left">
+									<img src="/games_list2/20140123075905_7671@2x.png" alt="">
+								</div>
+								<div class="right">
+									<h3 class="title">暗月马戏团</h3>
+									<p>
+										4暗月马戏团在艾泽拉斯的大地上，以经久不衰的演出及稀有道具赢得了足够的尊重。艾鲁作为团长，也是神话般的存在，他的时光瞬移节目总能让年轻的法师观众们报以热烈的追捧。然而艾鲁最后一次前往时光之穴搜集“时光砂”时，却意外的穿越到了一个叫做三国的时代。
+									</p>...
+								</div>
+								<div class="clear"></div>
+							</div>
 						</div>
-						<div class="right">
-							<h3 class="title">暗月马戏团</h3>
-							<p>
-								暗月马戏团在艾泽拉斯的大地上，以经久不衰的演出及稀有道具赢得了足够的尊重。艾鲁作为团长，也是神话般的存在，他的时光瞬移节目总能让年轻的法师观众们报以热烈的追捧。然而艾鲁最后一次前往时光之穴搜集“时光砂”时，却意外的穿越到了一个叫做三国的时代。
-							</p>...
-						</div>
-						<a href="" class="pos_icon pos_right"><img src="/games_list2/择律-付费咨询列表页分割箭头@2x.png" alt=""></a>
+						<a href="javascript:void(0)" class="pos_icon pos_right"><img @click="info4_img_next" src="/games_list2/择律-付费咨询列表页分割箭头@2x.png" alt=""></a>
 						<div class="clear"></div>
 					</div>
 				</div>
 				<div class="bottom">
 					<ol class="imglist">
-						<li><a href="javascript:void(0)" @click="change_imglist(0)">游戏壁纸</a></li>
-						<li><a href="javascript:void(0)" @click="change_imglist(1)" class="active">游戏截图</a></li>
+						<li><a href="javascript:void(0)" @click="change_imglist(0)" class="active">游戏壁纸</a></li>
+						<li><a href="javascript:void(0)" @click="change_imglist(1)">游戏截图</a></li>
 					</ol>
 					<div class="clear"></div>
-					<ul>
-						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
-						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
-						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
-						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
-						<li><img src="/games_list/timg (1)@2x.png" alt=""></li>
-					</ul>
+					<div class="imgs_content">
+						<ul>
+							<li><img @click="click_img('/games_list/timg (1)@2x.png')" src="/games_list/timg (1)@2x.png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (1)@2x.png')" src="/games_list/timg (1)@2x.png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (1)@2x.png')" src="/games_list/timg (1)@2x.png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (1)@2x.png')" src="/games_list/timg (1)@2x.png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (1)@2x.png')" src="/games_list/timg (1)@2x.png" alt=""></li>
+						</ul>
+						<ul>
+							<li><img @click="click_img('/games_list/timg (2).png')" src="/games_list/timg (2).png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (2).png')" src="/games_list/timg (2).png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (2).png')" src="/games_list/timg (2).png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (2).png')" src="/games_list/timg (2).png" alt=""></li>
+							<li><img @click="click_img('/games_list/timg (2).png')" src="/games_list/timg (2).png" alt=""></li>
+						</ul>
+					</div>
+					<!-- 弹框 -->
+					<el-dialog
+						:visible.sync="modal_change"
+						width="1000px"
+						>
+						<div class="dialog">
+							<div class="info">
+								<span>游戏截图</span>
+								<a href="">下载</a>
+								<div class="img">
+									<img :src="dialog_imgSrc" alt="">
+								</div>
+							</div>
+						</div>
+					</el-dialog>
+					<div class="clear"></div>
 				</div>
 			</div>
 		</div>
@@ -189,42 +255,50 @@
 					left 0
 				.pos_right
 					right 0
-				.left
+				.info4_content
+					overflow hidden
+					width 100%
+					height 185px
 					float left
-					/*left+right的宽度之和不能超过100*/
-					width 25%
-					margin 0 2.5%
-				.right
-					float left
-					width 55%
-					margin 0 5%
-					.title
-						margin-top 10px
-						font-size 24px
-						color #FD8F24
-					/*行数溢出*/
-					p
-						margin-top 15px
-						position relative
-						line-height 25px
-						max-height 100px
-						overflow hidden
+					position relative
+					.info4_inner
+						transition all 1s
+						position absolute
+						width 100%
+						left 100%
+						top 0
+						&:nth-of-type(1)
+							left -100%
+						&:nth-of-type(2)
+							left 0%
+						&:nth-of-type(3)
+							left 100%
+						.left
+							float left
+							/*left+right的宽度之和不能超过100*/
+							width 25%
+							margin 0 2.5%
+						.right
+							float left
+							width 55%
+							margin 0 5%
+							.title
+								margin-top 10px
+								font-size 24px
+								color #FD8F24
+							/*行数溢出*/
+							p
+								margin-top 15px
+								position relative
+								line-height 25px
+								max-height 100px
+								overflow hidden
 		.bottom
 			margin-top 25px
-			height 220px
 			background #fff
-			padding 0 30px
-			ul
-				li
-					margin-top 20px
-					float left
-					width 20%
-					text-align center
-					img
-						width 95%
+			padding 30px 30px
 			ol
 				li
-					margin-top 30px
 					float left
 					width 120px
 					&:first-child
@@ -234,9 +308,43 @@
 						font-size 18px
 						&.active
 							color #FD8F24
+			.imgs_content
+				width 100%
+				height 145px
+				margin-top 20px
+				overflow hidden
+				ul
+					width 100%
+					height 100%
+					transition all 1s
+					li
+						float left
+						width 20%
+						text-align center
+						img
+							width 95%
+							cursor pointer
+			.dialog
+				padding 30px
+				span
+					color #333
+					font-size 18px
+				a
+					color #FD8F24
+					margin-left 20px
+				.img
+					margin-top 20px
+					img
+						width 100%
 </style>
 <script>
 export default{
+	data(){
+		return{
+			modal_change: false,
+			dialog_imgSrc:''
+		}
+	},
 	methods:{
 		change_list(index){
 			$('.center .game_list ul li').eq(index).find('a').css('color','#FD8F24').parent('li').siblings().find('a').css('color','#000');
@@ -244,6 +352,19 @@ export default{
 		},
 		change_imglist(index){
 			$('.imglist li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
+			$('.imgs_content ul').eq(index).show().siblings().hide();
+		},
+		click_img(src){
+			this.dialog_imgSrc=src;
+			this.modal_change=true;
+		},
+		info4_img_prev(){
+			console.log('上一张');
+			$('.info4_content').prepend($('.info4_content .info4_inner:last-child'));
+		},
+		info4_img_next(){
+			console.log('下一张');
+			$('.info4_content').append($('.info4_content .info4_inner:first-child'));
 		}
 	}
 }

@@ -35,7 +35,7 @@
 	.container
 		container()
 		color rgba(243,243,243,1)
-		padding-top 40px
+		padding 20px 0
 		.foot_title
 			float left
 		.foot_list
@@ -44,25 +44,24 @@
 			li
 				float left
 				width 200px
-				margin-bottom 25px
+				line-height 35px
 				a
 					color rgba(243,243,243,1)
 		public_bottom()
 			text-align center
 			font-size 14px
 			color #888
-			margin-top 15px
+			margin-top 5px
 		.nav_list
 			width 100%
 			public_bottom()
+			margin-top 3px !important
 			li
 				display inline-block
 				a
 					color #888
 		.comment
 			public_bottom()
-			&:last-child
-				padding-bottom 40px
 </style>
 <script>
 export default{

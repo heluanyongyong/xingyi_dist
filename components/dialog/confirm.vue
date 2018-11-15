@@ -53,7 +53,7 @@ export default{
     	click_success(){
     		this.modal_change=false;
 			setTimeout(()=>{
-				this.$router.push('/');
+				this.$router.push('/login');
 			},1000);
     	}
     },

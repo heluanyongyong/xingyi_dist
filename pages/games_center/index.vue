@@ -38,9 +38,9 @@
 							<tfoot>
 								<tr>
 									<td colspan="3">
-										<span></span>
-										<span class="active"></span>
-										<span></span>
+										<span @click="change_tablepages(0)"></span>
+										<span @click="change_tablepages(1)" class="active"></span>
+										<span @click="change_tablepages(2)"></span>
 									</td>
 								</tr>
 							</tfoot>
@@ -57,8 +57,13 @@
     				<div class="gamecontent">
     					<ul>
     						<li v-for="item in 15" :key="item">
-    							<div class="content">
-	    							<nuxt-link to="/games_center/infos"><img src="/games_center/oss_5bc6f94faf878@2x.png" alt=""></nuxt-link>
+    							<div class="divcontent">
+    								<div class="imgdiv">
+    									<img src="/games_center/oss_5bc6f94faf878@2x.png" alt="">
+    									<div class="pos_info">
+    										<div class="info"><nuxt-link to="/games_center/infos">查看详情 >></nuxt-link></div>
+    									</div>
+    								</div>
 	    							<p class="title">剑灵</p>
 	    							<p class="content">上线时间：2017-10-28</p>
 	    							<p class="content">运营代理商：星移盒子</p>
@@ -89,6 +94,9 @@ export default{
     	// 改变游戏标签列表、游戏标签颜色切换
     	change_listtitle(index){
     		$('.listtitle li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
+    	},
+    	change_tablepages(index){
+    		$('.content_left_bottom tfoot span').eq(index).addClass('active').siblings().removeClass('active');
     	}
     }
 }
@@ -205,12 +213,35 @@ export default{
 						width 20%
 						/*若改变此处，需要改变左边对应上边距*/
 						margin-top 25px
-						.content
+						.divcontent
 							width 95%
 							margin 0 2.5%
 							background white
-							img
-								width 100%
+							.imgdiv
+								line-height 0
+								position relative
+								&:hover
+									.pos_info
+										opacity 1
+								img
+									width 100%
+								.pos_info
+									transition all 0.5s
+									opacity 0
+									position absolute
+									width 100%
+									height 100%
+									background rgba(0,0,0,0.6)
+									top 0 
+									left 0
+									text-align center
+									.info
+										margin-top 110px
+										a
+											transition all 0.5s
+											color #fff
+											&:hover
+												color #FD8F24
 							p
 								text-align center
 								margin-top 10px

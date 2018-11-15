@@ -43,7 +43,8 @@ module.exports = {
     vender:['element-ui']
   },
   plugins: [
-    {src:'~plugins/element-ui', ssr: true}
+    {src:'~plugins/element-ui', ssr: true},
+    {src:'~plugins/vue-map', ssr: true}
   ],
   css: [
     {
@@ -53,6 +54,6 @@ module.exports = {
     {
       src:'element-ui/lib/theme-chalk/index.css'
     }
-  ]  
+  ]
 }
 
