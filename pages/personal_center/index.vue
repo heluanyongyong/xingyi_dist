@@ -10,7 +10,7 @@
 			</div>
 			<div class="fl div_right clearfix">
 				<ul class="ul_right">
-					<!-- 我的账号 -->
+					<!-- 我的账号 注册登录-->
 					<li class="list1">
 						<dl class="clearfix">
 							<dd><img src="/personal_img/header.png"></dd>
@@ -23,41 +23,97 @@
 								<p><em>身份证号码：</em><span>星移盒子</span></p>
 						    </dd>
 						</dl>
-						<p class="p font20">账号安全保护</p>
-						<ol class="clearfix">
-							<li><img src="/personal_img/name.png"></li>
-							<li>
-								<p class="font24">实名认证</p>
-								<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
-							</li>
-							<li><p @click="isShow=!isShow">设置</p></li>
-						</ol>
-						<ol class="clearfix">
-							<li><img src="/personal_img/phone.png"></li>
-							<li>
-								<p class="font24">安全手机</p>
-								<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
-							</li>
-							<li><p @click="show=!show">设置</p></li>
-						</ol>
-						<ol class="clearfix">
-							<li><img src="/personal_img/sub.png"></li>
-							<li>
-								<p class="font24">密码设置</p>
-								<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
-							</li>
-							<li><p @click="listChange(1)">设置</p></li>
-						</ol>
+						<div class="listNone" v-show="yes">
+							<p class="p font20">账号安全保护</p>
+							<ul class="clearfix">
+								<li><img src="/personal_img/name.png"></li>
+								<li>
+									<p class="font24">实名认证</p>
+									<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
+								</li>
+								<li id="fristLi" @click="yesShow()"><p>防沉迷规则</p></li>
+							</ul>
+							<ul class="clearfix">
+								<li><img src="/personal_img/phone.png"></li>
+								<li>
+									<p class="font24">安全手机</p>
+									<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
+								</li>
+								<li><p @click="show=!show">设置</p></li>
+							</ul>
+							<ul class="clearfix">
+								<li><img src="/personal_img/sub.png"></li>
+								<li>
+									<p class="font24">密码设置</p>
+									<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
+								</li>
+								<li><p @click="listChange(2)">设置</p></li>
+							</ul>
+						</div>
+						<!-- 防沉迷详情 -->
+						<div v-show="noShow">
+							<p class="p font20">中国游戏中心防沉迷系统说明：</p>
+                            <ol class="olMg">
+                            	<li>成年玩家一次注册成功,将永久解除防沉迷限制，我们将对你的身份资料进行严格保密。注册成功后请退出服务器重新登陆。</li>
+                            	<li>对于未进行防沉迷身份提交的玩家，系统将统一视其为未成年玩家（法定年龄未满18岁）。</li>
+                            	<li>未成年玩家玩游戏时间累计满3个小时后，所有的游戏收益（积分，经验值、金币等）减半，满5小时后收益为0，累计下线时间超过5小时后，游戏收益恢复正常。成年玩家无此限制。</li>
+                            	<li>请尽量提交真实姓名及身份证号,一旦发现为虚假注册后,将重新视其帐号为未成年玩家。</li>
+                            	<li>如想查询本人及监护人身份证是否已提交，可进行致电查询，联系电话：0755-28810101。</li>
+                            	<li>帐号丢失后，如无帐保，可将您注册的真实姓名的身份证复印件传真至客服核实后,即可重新取回丢失的帐号，但已有帐保的帐号则还是以帐保信息为准。</li>
+                            	<li>您也可以移位到客服申诉通道进行帐号申诉。</li>
+                            </ol>
+						</div>
+					</li>
+					<!-- 我的账号 第三方登录-->
+					<li class="list1 none">
+						<dl class="clearfix">
+							<dd><img src="/personal_img/header.png"></dd>
+							<dd>
+								<p><em>账号：</em><span>星移盒子</span></p>
+								<p><em>真实姓名：</em><span>星移盒子</span></p>
+							</dd>
+						    <dd>
+						    	<p><em>手机号码：</em><span>星移盒子</span></p>
+								<p><em>身份证号码：</em><span>星移盒子</span></p>
+						    </dd>
+						</dl>
+						<div class="listNone">
+							<p class="p font20">账号安全保护</p>
+							<ul class="clearfix">
+								<li><img src="/personal_img/name.png"></li>
+								<li>
+									<p class="font24">实名认证</p>
+									<p class="font16 gray">根据国家有关规定，您在进入游戏时需要进行实名及防沉迷验证</p>
+								</li>
+								<li><p @click="isShow=!isShow">设置</p></li>
+							</ul>
+							<ul class="clearfix">
+								<li><img src="/personal_img/phone.png"></li>
+								<li>
+									<p class="font24">安全手机</p>
+									<p class="font16 gray">手机是保护账号安全最重要的手段，请不要泄露您的手机号和手机验证码。</p>
+								</li>
+								<li><p @click="show=!show">设置</p></li>
+							</ul>
+							<ul class="clearfix">
+								<li><img src="/personal_img/sub.png"></li>
+								<li>
+									<p class="font24">密码设置</p>
+									<p class="font16 gray">密码设置 修改原密码，找回密码等功能在此。</p>
+								</li>
+								<li><p @click="listChange(2)">设置</p></li>
+							</ul>
+						</div>
 					</li>
 					<!-- 修改密码 -->
 					<li class="tc list2 none">
 						<p class="font36 black mb49">星移盒子</p>
-						<div class="tr w462">
+						<form class="tr w462" method="post">
 							<p><span>原密码</span><input type="text" name=""></p>
 							<p><span>新密码</span><input type="text" name=""></p>
 							<p><span>确认密码</span><input type="text" name=""></p>
 							<p class="mt45"><input type="submit" name="" value="确认" class="bgOrange white"></p>
-						</div>
+						</form>
 					</li>
 				</ul>
 			</div>
@@ -92,6 +148,7 @@
 				<p><button class="active1" @click="fShow=!fShow">确定</button></p>
 			</div>
 		</div>
+		
 	</div>
 </template>
 
@@ -103,7 +160,9 @@ export default {
       isShow: false,
       show:false,
       fShow:false,
-      no:false
+      no:false,
+      noShow:false,
+      yes:true
     }
   },
     methods:{
@@ -114,6 +173,10 @@ export default {
 		ifshow(){
            this.show=false
            this.fShow=true
+		},
+		yesShow(){
+			this.yes=false
+			this.noShow=true
 		}
     }
 }
@@ -121,25 +184,6 @@ export default {
 
 <style scoped>
 /*模态框*/
-.modal{
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0,0.5);
-	position: fixed;
-    top: 0;
-    left: 0;
-}
-.modal_box{
-	width: 527px;
-	height: 400px;
-	position: fixed;
-	background:rgba(255,255,255,1);
-	top: 25%;
-	left: 25%;
-	bottom: 25%;
-	right: 25%;
-	padding: 40px 0 0 62px;
-}
 .modal_box input{
 	padding-left: 10px;
 }
@@ -162,7 +206,7 @@ export default {
 }
 /*左边列表样式*/
 h1{
-	padding: 55px 0 0  42px;
+	padding: 55px 0 30px 42px;
 }
 .div_left{
 	width: 258px;
@@ -180,6 +224,7 @@ h1{
 	color: #666666;
 	text-align: center;
 	font-size: 22px;
+	border-bottom: 1px solid white;
 }
 .ul_left li:hover{
 	color: white;
@@ -243,15 +288,16 @@ span{
 	line-height: 60px;
 	padding-left: 26px;
 	margin: 44px 0;
+	color: #333;
 }
-ol li{
+.listNone li{
 	float: left;
 	margin-bottom: 72px;
 }
-ol li:nth-child(2){
+.listNone li:nth-child(2){
 	margin: 20px 0 0 23px;
 }
-ol li:last-child{
+.listNone li:last-child{
 	width: 100px;
 	height: 40px;
 	line-height: 40px;
@@ -261,5 +307,16 @@ ol li:last-child{
 	text-align: center;
 	float: right;
 	margin-top: 40px;
+}
+#fristLi{
+	background-color: white;
+	color: #666666;
+	border: 1px solid #EFEFEF;
+	width: 121px;
+}
+.olMg li{
+   margin: 0 0 8px 20px;
+   font-size: 16px;
+   color: #666666
 }
 </style>

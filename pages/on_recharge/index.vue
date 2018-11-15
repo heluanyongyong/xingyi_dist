@@ -1,98 +1,261 @@
 <template>
 	<div class="bgColor ptb3">
 		<div class="bgWhite ptb3 container">
-			<table class="w100 margin">
-				<tbody>
-					<tr class="one">
-						<td>充值账号：</td>
-						<td><input type="text" name="name" value="星移"><span>更改帐号</span></td>
-					</tr>
-					<tr class="two">
-						<td>充值游戏：</td>
-						<td>						
-							<span class="rel">
-								<input type="text" name="game" value="泡泡堂"><button @click="isShow=!isShow"><img src="/recharge_img/down.png"></button>
-								<img src="/recharge_img/img.png" class="abs" v-show="isShow">
-							</span>
-							&nbsp;&nbsp;
-							<input type="text" name="game" value="风云 3区"><button><img src="/recharge_img/down.png"></button>
-						</td>
-					</tr>
-					<tr class="three">
-						<td>选择金额：</td>
-						<td>
-							<p>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-							</p>
-							<p>
-								<button class="bg_yes">10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-								<button>10元</button>
-							</p>
-							<p class="other">
-								<span class="font18">其他</span>&nbsp;<input type="text" name="num" class="tc">
-							</p>
-						</td>
-					</tr>
-					<tr class="four">
-						<td>支付方式：</td>
-					    <td class="tabTit">
-					    	<button @click="tabChange(0)" class="bg_yes">微信支付</button>
-					    	<button @click="tabChange(1)">支付宝支付</button>
-					    	<button @click="tabChange(2)">网银支付</button>
-					    </td>
-					</tr>
-				</tbody>
-			</table>
-			<ul class="tc tabBd">
-				<!-- 微信支付 -->
-				<li class="block">
-					<p class="font12 mb10">微信支付<span class="orange">1000.00</span>元</p>
-					<p><img src="/recharge_img/ewm.png"></p>
-				</li>
-				<!-- 支付宝支付 -->
-				<li>
-					<p class="font12 mb10">支付宝支付<span class="orange">1000.00</span>元</p>
-					<p><img src="/recharge_img/ewm.png"></p>
-				</li>
-				<!-- 网银支付 -->
-				<li class="clearfix">
-					<div class="fl ml1 font18">选择银行：</div>
-					<div class="five fl ml2">
-						<p>
-							<span><input type="radio" name=""><img src="/recharge_img/img1.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img2.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img3.png"></span>
-						</p>
-						<p>
-							<span><input type="radio" name=""><img src="/recharge_img/img4.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img5.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img6.png"></span>
-						</p>
-						<p>
-							<span><input type="radio" name=""><img src="/recharge_img/img7.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img8.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img9.png"></span>
-						</p>
-						<p>
-							<span><input type="radio" name=""><img src="/recharge_img/img10.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img11.png"></span>
-							<span><input type="radio" name=""><img src="/recharge_img/img12.png"></span>
-						</p>
-					</div>
-					<div><button id="but">立即充值</button></div>
-				</li>
-			</ul>
+			<!-- 头部导航 -->
+			<div class="clearfix head_box">
+				<ul class="head_ul clearfix fl tc">
+					<li @click="headChange(0)" class="clickColor">
+						充值到游戏
+                        <div class="arrow-down b"></div>
+					</li>
+					<li @click="headChange(1)">
+						充值到星币
+                       <div class="arrow-down"></div>
+					</li>
+					<li @click="headChange(2)">
+					   星币充值到游戏
+					   <div class="arrow-down"></div>
+					</li>
+				</ul>
+				<div class="fr font18"><nuxt-link to="/on_recharge/record" tag="span">
+					充值记录>>
+				</nuxt-link></div>
+			</div>
+			<div class="recharge_box">
+				<!-- 充值到游戏 -->
+				<div>
+					<table class="w100 margin">
+						<tbody>
+							<tr class="one">
+								<td>充值账号：</td>
+								<td><input type="text" name="name" value="星移"><span class="none">更改帐号</span></td>
+							</tr>
+							<tr class="two">
+								<td>充值游戏：</td>
+								<td>						
+									<span class="rel">
+										<input type="text" name="game" value="泡泡堂"><button @click="isShow=!isShow"><img src="/recharge_img/down.png"></button>
+										<img src="/recharge_img/img.png" class="abs" v-show="isShow">
+									</span>
+									&nbsp;&nbsp;
+									<input type="text" name="game" value="风云 3区"><button><img src="/recharge_img/down.png"></button>
+								</td>
+							</tr>
+							<tr class="three">
+								<td>选择金额：</td>
+								<td>
+									<p>
+										<span @click="chooseMoney(0)">10元</span>
+										<span @click="chooseMoney(1)">20元</span>
+										<span @click="chooseMoney(2)">30元</span>
+										<span @click="chooseMoney(3)">50元</span>
+										<span @click="chooseMoney(4)">100元</span>
+										<span @click="chooseMoney(5)">200元</span>
+										<span @click="chooseMoney(6)">300元</span><br>
+									<!-- </p>
+									<p> -->
+										<span class="bg_yes" @click="chooseMoney(7)">500元</span>
+										<span @click="chooseMoney(8)">1000元</span>
+										<span @click="chooseMoney(9)">2000元</span>
+										<span @click="chooseMoney(10)">3000元</span>
+										<span @click="chooseMoney(11)">5000元</span>
+										<span @click="chooseMoney(12)">1000元</span>
+										<span @click="chooseMoney(13)">2000元</span>
+									</p>
+									<p class="other">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
+									</p>
+								</td>
+							</tr>
+							<tr class="four">
+								<td>支付方式：</td>
+							    <td class="tabTit">
+							    	<button @click="tabChange(0)" class="bg_yes">微信支付</button>
+							    	<button @click="tabChange(1)">支付宝支付</button>
+							    	<button @click="tabChange(2)">网银支付</button>
+							    </td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="tc tabBd">
+						<!-- 微信支付 -->
+						<li>
+							<p class="font12 mb10">微信支付:<span class="orange">0</span>元</p>
+							<p><img src="/recharge_img/phone.png"></p>
+						</li>
+						<!-- 支付宝支付 -->
+						<li class="none">
+							<p class="font12 mb10">支付宝支付<span class="orange">1000.00</span>元</p>
+							<p><img src="/recharge_img/ewm.png"></p>
+						</li>
+						<!-- 网银支付 -->
+						<li class="clearfix none">
+							<div class="fl ml1 font18">选择银行：</div>
+							<div class="five fl ml2">
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img1.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img2.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img3.png"></span>
+								</p>
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img4.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img5.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img6.png"></span>
+								</p>
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img7.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img8.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img9.png"></span>
+								</p>
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img10.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img11.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img12.png"></span>
+								</p>
+							</div>
+							<div><button id="but">立即充值</button></div>
+						</li>
+					</ul>
+				</div>
+				<!-- 充值到星币 -->
+				<div class="none">
+					<table class="w100 margin">
+						<tbody>
+							<tr class="one">
+								<td>我的星币：</td>
+								<td><span>100</span></td>
+							</tr>
+							<tr class="three">
+								<td>选择金额：</td>
+								<td>
+									<p>
+										<span @click="chooseMoney(14)">10元</span>
+										<span @click="chooseMoney(15)">20元</span>
+										<span @click="chooseMoney(16)">30元</span>
+										<span @click="chooseMoney(17)">50元</span>
+										<span @click="chooseMoney(18)">100元</span>
+										<span @click="chooseMoney(19)">200元</span>
+										<span @click="chooseMoney(20)">300元</span><br>
+									<!-- </p>
+									<p> -->
+										<span class="bg_yes" @click="chooseMoney(21)">500元</span>
+										<span @click="chooseMoney(22)">1000元</span>
+										<span @click="chooseMoney(23)">2000元</span>
+										<span @click="chooseMoney(24)">3000元</span>
+										<span @click="chooseMoney(25)">5000元</span>
+										<span @click="chooseMoney(26)">1000元</span>
+										<span @click="chooseMoney(27)">2000元</span>
+									</p>
+									<p class="other">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>星币说明：</td>
+								<td><span>星币比例1:1，例如充值100元得100星币；</span></td>
+							</tr>
+							<tr class="four">
+								<td>支付方式：</td>
+							    <td class="tabTit">
+							    	<button @click="tabChange(3)" class="bg_yes">微信支付</button>
+							    	<button @click="tabChange(4)">支付宝支付</button>
+							    	<button @click="tabChange(5)">网银支付</button>
+							    </td>
+							</tr>
+						</tbody>
+					</table>
+					<ul class="tc tabBd">
+						<!-- 微信支付 -->
+						<li>
+							<p class="font12 mb10">微信支付:<span class="orange">0</span>元</p>
+							<p><img src="/recharge_img/phone.png"></p>
+						</li>
+						<!-- 支付宝支付 -->
+						<li class="none">
+							<p class="font12 mb10">支付宝支付<span class="orange">1000.00</span>元</p>
+							<p><img src="/recharge_img/ewm.png"></p>
+						</li>
+						<!-- 网银支付 -->
+						<li class="clearfix none">
+							<div class="fl ml1 font18">选择银行：</div>
+							<div class="five fl ml2">
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img1.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img2.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img3.png"></span>
+								</p>
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img4.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img5.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img6.png"></span>
+								</p>
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img7.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img8.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img9.png"></span>
+								</p>
+								<p>
+									<span><input type="radio" name=""><img src="/recharge_img/img10.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img11.png"></span>
+									<span><input type="radio" name=""><img src="/recharge_img/img12.png"></span>
+								</p>
+							</div>
+							<div><button id="but">立即充值</button></div>
+						</li>
+					</ul>
+				</div>
+				<!-- 星币充值到游戏 -->
+				<div class="none">
+					<table class="w100 margin">
+						<tbody>
+							<tr class="one">
+								<td>充值账号：</td>
+								<td><input type="text" name="name" value="星移"><span class="none">更改帐号</span>
+									<span>我的星币：</span>
+									<span>10000</span>
+								</td>
+							</tr>
+							<tr class="two">
+								<td>充值游戏：</td>
+								<td>						
+									<span class="rel">
+										<input type="text" name="game" value="泡泡堂"><button @click="isShow=!isShow"><img src="/recharge_img/down.png"></button>
+										<img src="/recharge_img/img.png" class="abs" v-show="isShow">
+									</span>
+									&nbsp;&nbsp;
+									<input type="text" name="game" value="风云 3区"><button><img src="/recharge_img/down.png"></button>
+								</td>
+							</tr>
+							<tr class="three">
+								<td>选择星币：</td>
+								<td>
+									<p>
+										<span @click="chooseMoney(28)">10</span>
+										<span @click="chooseMoney(29)">20</span>
+										<span @click="chooseMoney(30)">30</span>
+										<span @click="chooseMoney(31)">50</span>
+										<span @click="chooseMoney(32)">100</span>
+										<span @click="chooseMoney(33)">200</span>
+										<span @click="chooseMoney(34)">300</span><br>
+										<span class="bg_yes" @click="chooseMoney(35)">500</span>
+										<span @click="chooseMoney(36)">1000</span>
+										<span @click="chooseMoney(37)">2000</span>
+										<span @click="chooseMoney(38)">3000</span>
+										<span @click="chooseMoney(39)">5000</span>
+										<span @click="chooseMoney(40)">1000</span>
+										<span @click="chooseMoney(41)">2000</span>
+									</p>
+									<p class="other">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
+									</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="tc"><button id="but">立即充值</button></div>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -106,15 +269,74 @@ export default {
     }
   },
   methods:{
+      	// 头部导航切换
+        headChange(index){
+        	$('.head_ul>li').eq(index).addClass('clickColor').siblings().removeClass('clickColor');
+        	$(".head_ul>li").children('div').hide().eq(index).show();
+        	$(".recharge_box>div").hide().eq(index).show();
+        },
+        // 额度选择状态
+        chooseMoney(index){
+        	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
+        	console.log("yes")
+        },
+        // 其他金额输入框被点击时
+        inputText(){
+            $('.three>td').children('p').children('span').removeClass('bg_yes');
+        },
+        // 支付方式切换
       	tabChange(index){
             $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
             $(".tabBd>li").hide().eq(index).show();
+            console.log("no")
       	}
   }			
 }
 </script>
 
 <style scoped>
+.head_ul .b{
+	display: block;
+}
+/*向下箭头*/
+.arrow-down{
+	width:0;
+	height:0;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	border-top:10px solid #FD8F24;
+}
+/*头部导航*/
+.head_box{
+	line-height: 82px;
+    padding-right: 45px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid #E7E7E7;
+}
+.head_ul li{
+     float: left;
+     width: 260px;
+     height: 82px;
+     line-height: 82px;
+     font-size: 26px;
+     color: #999;
+     border-left: 1px solid white;
+     position: relative; 
+}
+.head_ul li:hover{
+	background-color: #FD8F24;
+	color: white;
+}
+.head_ul .clickColor{
+	background-color: #FD8F24;
+	color: white;
+}
+.head_ul div{
+	display: none;
+	position: absolute;
+    left: 125px;
+}
+/*充值详情*/
 .margin{
 	margin: 0 73px;
 }
@@ -165,10 +387,20 @@ input{
  	line-height: 38px;
  	margin-left: 10px;
  }
- .three button{
+ .three span{
  	background-color: #F8F8F8;
- 	width: 93px;
+ 	width: 113px;
+ 	height: 48px;
+ 	line-height: 48px;
+ 	display: inline-block;
+ 	text-align: center;
  	margin-right: 15px;
+ 	overflow: hidden;
+ }
+ .three span:hover{
+ 	background: url(/recharge_img/yes.png) no-repeat right top;
+ 	border: 1px solid #FD8F24;
+ 	background-color: #F8F8F8;
  }
  .three p{
  	margin-bottom: 10px;
@@ -227,13 +459,10 @@ input{
 	margin-left: 82px;
 }
 .ml2{
-	margin-left: 52px;
+	margin-left: 35px;
 }
-ul{
+.tabBd{
 	margin-top: 20px;
-}
-ul>li{
-  display: none;
 }
 #but{
 	width:300px;
