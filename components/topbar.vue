@@ -18,10 +18,8 @@
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
 					<li>
-						<div>
-							<a href="javascript:void(0);"><img src="/games_center/消息@2x.png" alt="" @click="$router.push('/message')"></a>
-							<span><nuxt-link to="/message">消息</nuxt-link></span>
-						</div>
+						<a href="javascript:void(0);"><img src="/games_center/消息@2x.png" alt="" @click="$router.push('/message')"></a>
+						<span><nuxt-link to="/message">消息</nuxt-link></span>
 					</li>
 					<li>
 						<a href="javascript:void(0);"><img src="/games_center/退出@2x.png" alt="" @click="$router.push('login')"></a>

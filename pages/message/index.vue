@@ -5,18 +5,20 @@
 			<div class="top">
 				<div class="top_left">
 					<div>
-						<a href="" class="active">全部消息(3)</a>
+						<a @click="change_messageType(0)" href="javascript:void(0)" class="active">全部消息(3)</a>
+						<div class="pos active"></div>
+					</div>
+					<div>
+						<a @click="change_messageType(1)" href="javascript:void(0)">系统消息(2)</a>
 						<div class="pos"></div>
 					</div>
 					<div>
-						<a href="">系统消息(2)</a>
-					</div>
-					<div>
-						<a href="">服务消息(1)</a>
+						<a @click="change_messageType(2)" href="javascript:void(0)">服务消息(1)</a>
+						<div class="pos"></div>
 					</div>
 				</div>
 				<div class="top_right">
-					<label for="select_all"><input type="checkbox" name="" id="select_all"><span>全选</span></label>
+					<label for="select_all"><input @click="select_all" type="checkbox" name="" v-model="all_checkbox" id="select_all"><span>全选</span></label>
 					<button class="active">标记已读</button>
 					<button class="del">批量删除</button>
 				</div>
@@ -25,20 +27,27 @@
 			<div class="center">
 				<ul>
 					<li class="active">
-						<input class="checkbox" type="checkbox" name="" id="">
-						<img src="/message/消息管理-默认@2x.png" alt="">
-						<span class="type">服务消息</span>
-						<span class="info">星移网络科技提醒您充值成功</span>
+						<input @click="select_one(0)" v-model="default_checkboxs[0]" class="checkbox" type="checkbox" name="" id="">
+						<img @click="goto_message" src="/message/消息管理-默认@2x.png" alt="">
+						<span @click="goto_message" class="type">服务消息</span>
+						<span @click="goto_message" class="info">星移网络科技提醒您充值成功</span>
 						<span class="time">11.20</span>
 					</li>
 					<li v-for="item in 9" :key="item">
-						<input class="checkbox" type="checkbox" name="" id="">
-						<img src="/message/消息管理-默认@2x.png" alt="">
-						<span class="type">服务消息</span>
-						<span class="info">星移网络科技提醒您充值成功</span>
+						<input @click="select_one(item)" v-model="default_checkboxs[item]" class="checkbox" type="checkbox" name="" id="">
+						<img @click="goto_message" src="/message/消息管理-默认@2x.png" alt="">
+						<span @click="goto_message" class="type">服务消息</span>
+						<span @click="goto_message" class="info">星移网络科技提醒您充值成功</span>
 						<span class="time">11.20</span>
 					</li>
 				</ul>
+			</div>
+			<div class="bottom">
+				<el-pagination
+					background
+					layout="prev, pager, next"
+					:total="1000">
+				</el-pagination>
 			</div>
 		</div>
 	</div>
@@ -65,6 +74,7 @@
 					padding 0 20px
 					color #999
 				.pos
+					display none
 					position absolute
 					bottom -16px
 					left 0
@@ -82,6 +92,8 @@
 						border-width 8px
 						border-style solid
 						border-color transparent transparent #FD8F24 transparent
+				.active
+					display block
 		.top_right
 			float right
 			label,input,button,span
@@ -112,22 +124,72 @@
 				.checkbox
 					width 20px
 					height 20px
+					cursor pointer
 				img
 					margin-left 15px
+					cursor pointer
 				.type
+					cursor pointer
 					margin-left 10px
 				.info
+					cursor pointer
 					margin-left 30px
 				.time
 					float right
-			li.active
-				.type,.info
-					color #333
-				.time
-					color #666
+				&.active
+					.type,.info
+						color #333
+					.time
+						color #666
+				&:hover
+					.type,.info
+						color #FD8F24
+					.time
+						color #FD8F24
+	.bottom
+		text-align center
+		margin-top 30px
 </style>
 <script>
 export default{
-
+	mounted(){
+		// 初始化，所有的表单默认不选中
+		for(var i=0;i<$('.center li input').length;i++){
+			this.default_checkboxs[i]=false;
+		}
+	},
+	data(){
+		return{
+			// 表单组的选中和全选按钮的选中
+			default_checkboxs:[],
+			all_checkbox:false
+		}
+	},
+	methods:{
+		change_messageType(index){
+			$('.top_left').find('a').eq(index).addClass('active').parent().find('.pos').addClass('active').parent().siblings().find('a').removeClass('active').parent().find('.pos').removeClass('active');
+		},
+		// 点击全选按钮
+		select_all(){
+			// 全选按钮状态的改变
+			this.all_checkbox=!this.all_checkbox;
+			// 按钮组状态的改变
+			this.default_checkboxs.forEach((data,i)=>{this.default_checkboxs[i]=this.all_checkbox});
+		},
+		// 单击按钮组按钮
+		select_one(index){
+			// 按钮组单个按钮状态改变
+			this.default_checkboxs[index]=!this.default_checkboxs[index];
+		},
+		goto_message(){
+			this.$router.push('/message/infos');
+		}
+	},
+	watch:{
+		default_checkboxs(){
+			// 监听按钮组状态，若全为选中或者不选中：改变全选按钮的状态
+			this.default_checkboxs.indexOf(false)<0?this.all_checkbox=true:this.all_checkbox=false;
+		}
+	}
 }
 </script>
