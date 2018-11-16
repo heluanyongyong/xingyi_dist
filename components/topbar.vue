@@ -40,7 +40,7 @@
 					<img src="/games_center/图层 1@2x.png" alt="">
 					<span>星移盒子</span>
 				</div> -->
-				<img class="navimg" src="/games_center/组 10@2x.png" alt="" @click="click_logo">
+				<img class="navimg" src="/games_center/logo.png" alt="" @click="click_logo">
 				<div class="game_list">
 					<ul>
 						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
