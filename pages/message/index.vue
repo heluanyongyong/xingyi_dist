@@ -19,8 +19,8 @@
 				</div>
 				<div class="top_right">
 					<label for="select_all"><input @click="select_all" type="checkbox" name="" v-model="all_checkbox" id="select_all"><span>全选</span></label>
-					<button class="active">标记已读</button>
-					<button class="del">批量删除</button>
+					<button>标记已读</button>
+					<button>批量删除</button>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -28,14 +28,14 @@
 				<ul>
 					<li class="active">
 						<input @click="select_one(0)" v-model="default_checkboxs[0]" class="checkbox" type="checkbox" name="" id="">
-						<img @click="goto_message" src="/message/消息管理-默认@2x.png" alt="">
+						<img @click="goto_message" src="/message/message_active.png" alt="">
 						<span @click="goto_message" class="type">服务消息</span>
 						<span @click="goto_message" class="info">星移网络科技提醒您充值成功</span>
 						<span class="time">11.20</span>
 					</li>
 					<li v-for="item in 9" :key="item">
 						<input @click="select_one(item)" v-model="default_checkboxs[item]" class="checkbox" type="checkbox" name="" id="">
-						<img @click="goto_message" src="/message/消息管理-默认@2x.png" alt="">
+						<img @click="goto_message" src="/message/message_active.png" alt="">
 						<span @click="goto_message" class="type">服务消息</span>
 						<span @click="goto_message" class="info">星移网络科技提醒您充值成功</span>
 						<span class="time">11.20</span>
@@ -110,8 +110,11 @@
 				border-radius 3px
 				color #999
 				background rgb(248,248,248)
-				&.del
-					border 1px solid rgb(189,189,189)
+				border 1px solid rgb(189,189,189)
+				&:hover
+					background #FD8F24
+					border 1px solid #FD8F24
+					color white
 	.center
 		ul
 			padding 5px 0

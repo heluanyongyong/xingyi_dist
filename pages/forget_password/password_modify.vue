@@ -8,7 +8,7 @@
 				<span>确认密码：</span><input class="input_text" type="text">
 			</div>
 			<div class="bottom">
-				<model msg="修改星移账号密码成功" class="button_component"></model>
+				<model msg="修改星移账号密码成功" btn="密码修改成功" name="确定" class="button_component"></model>
 			</div>
 		</div>
 	</div>

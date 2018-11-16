@@ -4,7 +4,7 @@
 			<div>"天命"搜索到<span>3</span>条相关的内容</div>
 			<ul class="bgWhite clearfix">
 				<li class="clearfix">
-					<img src="/games_list/oss_5b923f9fc82ec.png" class="fl">
+					<img src="/games_list/games1.png" class="fl">
 					<div class="fl clearfix data_box font16">
 						<h2>天命奇御</h2>
 						<div class="fl">
@@ -18,7 +18,7 @@
 					</div>
 				</li>
 				<li class="clearfix">
-					<img src="/games_list/oss_5b923f9fc82ec.png" class="fl">
+					<img src="/games_list/games1.png" class="fl">
 					<div class="fl clearfix data_box">
 						<h2>天命奇御</h2>
 						<div class="fl">
@@ -32,7 +32,7 @@
 					</div>
 				</li>
 				<li class="clearfix">
-					<img src="/games_list/oss_5b923f9fc82ec.png" class="fl">
+					<img src="/games_list/games1.png" class="fl">
 					<div class="fl clearfix data_box">
 						<h2>天命奇御</h2>
 						<div class="fl">

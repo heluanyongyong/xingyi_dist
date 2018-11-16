@@ -1,7 +1,7 @@
 <template>
 	<div class="main">
 		<div class="head">
-			<img src="/contact_us/2018101915095848372@2x.png" alt="">
+			<img src="/contact_us/banner.png" alt="">
 		</div>
 		<div class="container">
 			<h2>联系我们</h2>

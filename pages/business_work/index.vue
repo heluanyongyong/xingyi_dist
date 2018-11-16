@@ -1,6 +1,9 @@
 <template>
 	<div>
 		<div class="top">
+			<img src="/shangwuhezuo/banner.png" alt="">
+		</div>
+		<div class="center">
 			<div class="container">
 				<h2 class="title">合作伙伴</h2>
 				<div class="canvas">
@@ -8,7 +11,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="center">
+		<div class="bottom">
 			<div class="container">
 				<h2 class="title">商务合作</h2>
 				<div class="left">
@@ -27,7 +30,23 @@
 					</div>
 					<div class="clear"></div>
 					<p class="d1 d3">请输入留言<input type="text"></p>
-					<div class="button"><button>提交</button></div>
+					<div class="button"><button @click="modal_change = true">提交</button></div>
+					<el-dialog
+						:visible.sync="modal_change"
+						width="500px"
+						:show-close="false"
+						:close-on-click-modal="false"
+						>
+						<div class="dialog">
+							<div class="dialog-content">
+								<img src="/login/pass.png" alt=""><span>提交成功</span>
+							</div>
+							<div class="clear"></div>
+							<div class="dialog-bottom">
+								<button @click="click_success">我知道了</button>
+							</div>
+						</div>
+					</el-dialog>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -42,6 +61,9 @@
 	letter-spacing 1px
 	margin-bottom 40px
 .top
+	img
+		width 100%
+.center
 	background rgba(248,248,248,1)
 	.container
 		text-align center
@@ -52,7 +74,7 @@
 			margin 0 auto
 			img
 				width 100%
-.center
+.bottom
 	background #fff
 	.container
 		text-align center
@@ -110,5 +132,16 @@
 </style>
 <script>
 export default{
+	data(){
+		return{
+			modal_change: false
+		}
+	},
+	methods:{
+		click_success(){
+			this.modal_change=false;
+			$('input').val('');
+		}
+	}
 }
 </script>

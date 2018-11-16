@@ -84,9 +84,36 @@ button.active
 	border-left none
 	color #FD8F24
 	font-size 16px
-
-
+/*去除样式*/
+ol,ul
+	list-style none
 /*公共背景*/
 .bggray
 	background rgb(248,248,248)
 	padding 40px 0 60px 0
+/*模态框*/
+.dialog
+	padding 80px
+	.dialog-content
+		text-align center
+		img,span
+			vertical-align middle
+		img
+			width 50px
+		span
+			margin-left 20px
+			font-size 24px
+	.dialog-bottom
+		text-align center
+		button
+			width 150px
+			background #FD8F24
+			color #FFFEFE
+			border-radius 5px
+			height 45px
+			margin-top 40px
+/*单行文字溢出出现...*/
+.text_overflow
+	text-overflow ellipsis
+	white-space nowrap
+	overflow hidden

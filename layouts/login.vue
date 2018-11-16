@@ -1,7 +1,7 @@
 <template>
 	<div class="main_div">
 		<logintop></logintop>
-		<nuxt class="loginmain" style="background:url('/login/2018101915095848372@2x.png');"/>
+		<nuxt class="loginmain" style="background:url('/login/banner.png');"/>
 		<footbar></footbar>
 	</div>
 </template>

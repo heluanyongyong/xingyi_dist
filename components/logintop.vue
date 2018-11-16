@@ -2,7 +2,7 @@
 	<div>
 		<div class="loginheader">
 			<ul>
-				<li><img @click="click_logo" src="/login/组 10@2x.png" alt=""></li>
+				<li><img @click="click_logo" src="/login/logo.png" alt=""></li>
 				<li class="line"></li>
 				<li><span>{{login_state}}</span></li>
 			</ul>
@@ -37,7 +37,7 @@
 export default{
 	data(){
 		return{
-			login_state:'登陆'
+			login_state:'登录'
 		}
 	},
 	methods:{
@@ -51,7 +51,7 @@ export default{
 			switch(to.path){
 				case '/login/register':this.login_state='注册';break;
 				case '/login/phone_bind':this.login_state='注册';break;
-				default:this.login_state='登陆';break;
+				default:this.login_state='登录';break;
 			}
 		}
 	}

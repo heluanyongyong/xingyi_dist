@@ -13,22 +13,22 @@
 						</div>
 					</li> -->
 					<li>
-						<nuxt-link to="/login" class="active">登陆</nuxt-link>
+						<nuxt-link to="/login" class="active">登录</nuxt-link>
 						 | 
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
 					<li>
-						<a href="javascript:void(0);"><img src="/games_center/消息@2x.png" alt="" @click="$router.push('/message')"></a>
+						<a href="javascript:void(0);"><img src="/games_center/message.png" alt="" @click="$router.push('/message')"></a>
 						<span><nuxt-link to="/message">消息</nuxt-link></span>
 					</li>
 					<li>
-						<a href="javascript:void(0);"><img src="/games_center/退出@2x.png" alt="" @click="$router.push('login')"></a>
+						<a href="javascript:void(0);"><img src="/games_center/tuichu.png" alt="" @click="$router.push('login')"></a>
 						<span><nuxt-link to="/login">退出</nuxt-link></span>
 					</li>
 					<li>
 						<div class="pos_div">
-							<input type="text" placeholder="请输入内容">
-							<img src="/games_center/搜素 (1)@2x.png" alt="" class="inner_img">
+							<input type="text" placeholder="请输入内容" @keydown="start_search">
+							<img src="/games_center/search.png" alt="" class="inner_img" @click="$router.push('/grabble')">
 						</div>
 					</li>
 				</ul>
@@ -134,17 +134,21 @@ top1_h=50px
 						height 30px
 						border-radius 10px
 						padding 0 40px 0 20px
+						&:hover
+							border none
+							outline 1px solid #FD8F24
 					.inner_img
 						width 10px
 						position absolute
 						right 15px
 						top 50%
 						transform translateY(-50%)
+						cursor pointer
 top2_h=80px
 .top2
 	height top2_h
 	background rgba(255,255,255,1)
-	border 1px solid #e1e1e1
+	border-top 1px solid #e1e1e1
 	.container
 		container()
 		.navimg
@@ -182,12 +186,19 @@ top2_h=80px
 						/*路由颜色*/
 						&.nuxt-link-active
 							color #FD8F24
+							border-bottom 5px solid #FD8F24
+							padding-bottom 25px
 </style>
 <script>
 export default{
 	methods:{
 		click_logo(){
 			this.$router.push('/download_center');
+		},
+		start_search(e){
+			if(e.keyCode==13){
+				this.$router.push('/grabble');
+			}
 		}
 	}
 }

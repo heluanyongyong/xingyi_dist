@@ -1,7 +1,7 @@
 <template>
     <div>
     	<div class="top3">
-    		<img src="/games_center/2018101915095848372@2x.png" alt="">
+    		<img src="/games_center/banner.png" alt="">
     	</div>
     	<div class="center">
     		<div class="container">
@@ -59,12 +59,12 @@
     						<li v-for="item in 15" :key="item">
     							<div class="divcontent">
     								<div class="imgdiv">
-    									<img src="/games_center/oss_5bc6f94faf878@2x.png" alt="">
+    									<img src="/games_center/gamelist1.png" alt="">
     									<div class="pos_info">
     										<div class="info"><nuxt-link to="/games_center/infos">查看详情 >></nuxt-link></div>
     									</div>
     								</div>
-	    							<p class="title">剑灵</p>
+	    							<p class="title text_overflow">剑灵</p>
 	    							<p class="content">上线时间：2017-10-28</p>
 	    							<p class="content">运营代理商：星移盒子</p>
     							</div>
@@ -90,13 +90,16 @@ export default{
     	change_gametitle(index){
     		$('.gametitle').find('a').eq(index).addClass('active').siblings().removeClass('active');
     		$('.listtitle li a').removeClass('active');
+    		$('.gamecontent').fadeOut().fadeIn(500);
     	},
     	// 改变游戏标签列表、游戏标签颜色切换
     	change_listtitle(index){
     		$('.listtitle li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
+    		$('.gamecontent').fadeOut().fadeIn(500);
     	},
     	change_tablepages(index){
     		$('.content_left_bottom tfoot span').eq(index).addClass('active').siblings().removeClass('active');
+    		$('.content_left_bottom tbody').fadeOut().fadeIn(250);
     	}
     }
 }
@@ -249,6 +252,7 @@ export default{
 									font-size 18px
 									bold()
 									margin-bottom 15px
+									padding 0 20px
 								&.content
 									font-size 12px
 									&:last-child

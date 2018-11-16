@@ -43,10 +43,10 @@
     			<div class="login_bottom">
     				<span class="title">第三方登录</span>
     				<ul>
-    					<li><img src="/login/QQ@2x.png" alt=""></li>
-    					<li><img src="/login/微博@2x.png" alt=""></li>
-    					<li><img src="/login/支付宝@2x.png" alt=""></li>
-    					<li><img src="/login/微信@2x.png" alt=""></li>
+    					<li><img src="/login/qq.png" alt=""></li>
+    					<li><img src="/login/weibo.png" alt=""></li>
+    					<li><img src="/login/zhifubao.png" alt=""></li>
+    					<li><img src="/login/weixing.png" alt=""></li>
     				</ul>
     				<div class="clear"></div>
     			</div>

@@ -9,7 +9,7 @@
 	    			<button class="middle_button">获取验证码</button>
 	    			<div class="clear"></div>
 				</div>
-    			<model msg="恭喜您成功注册星移帐号"></model>
+    			<model msg="恭喜您成功注册星移帐号" btn="我知道了" name="确定"></model>
 			</div>
 		</div>
 	</div>
