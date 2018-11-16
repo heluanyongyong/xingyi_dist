@@ -23,7 +23,7 @@
 			</div>
 			<div class="recharge_box">
 				<!-- 充值到游戏 -->
-				<form>
+				<div>
 					<table class="w100 margin">
 						<tbody>
 							<tr class="one">
@@ -118,7 +118,7 @@
 							<div><button id="but">立即充值</button></div>
 						</li>
 					</ul>
-				</form>
+				</div>
 				<!-- 充值到星币 -->
 				<div class="none">
 					<table class="w100 margin">
@@ -138,8 +138,6 @@
 										<span @click="chooseMoney(18)">100元</span>
 										<span @click="chooseMoney(19)">200元</span>
 										<span @click="chooseMoney(20)">300元</span><br>
-									<!-- </p>
-									<p> -->
 										<span class="bg_yes" @click="chooseMoney(21)">500元</span>
 										<span @click="chooseMoney(22)">1000元</span>
 										<span @click="chooseMoney(23)">2000元</span>
