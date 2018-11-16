@@ -23,12 +23,14 @@
 			</div>
 			<div class="recharge_box">
 				<!-- 充值到游戏 -->
-				<div>
+				<form>
 					<table class="w100 margin">
 						<tbody>
 							<tr class="one">
 								<td>充值账号：</td>
-								<td><input type="text" name="name" value="星移"><span class="none">更改帐号</span></td>
+								<td>
+                                    <input type="text" value="星移" disabled class="read" required="required"><span @click="remove()">更改帐号</span>
+								</td>
 							</tr>
 							<tr class="two">
 								<td>充值游戏：</td>
@@ -45,22 +47,22 @@
 								<td>选择金额：</td>
 								<td>
 									<p>
-										<span @click="chooseMoney(0)">10元</span>
-										<span @click="chooseMoney(1)">20元</span>
-										<span @click="chooseMoney(2)">30元</span>
-										<span @click="chooseMoney(3)">50元</span>
-										<span @click="chooseMoney(4)">100元</span>
-										<span @click="chooseMoney(5)">200元</span>
-										<span @click="chooseMoney(6)">300元</span><br>
+										<span @click="chooseMoney(0)">10</span>
+										<span @click="chooseMoney(1)">20</span>
+										<span @click="chooseMoney(2)">30</span>
+										<span @click="chooseMoney(3)">50</span>
+										<span @click="chooseMoney(4)">100</span>
+										<span @click="chooseMoney(5)">200</span>
+										<span @click="chooseMoney(6)">300</span><br>
 									<!-- </p>
 									<p> -->
-										<span class="bg_yes" @click="chooseMoney(7)">500元</span>
-										<span @click="chooseMoney(8)">1000元</span>
-										<span @click="chooseMoney(9)">2000元</span>
-										<span @click="chooseMoney(10)">3000元</span>
-										<span @click="chooseMoney(11)">5000元</span>
-										<span @click="chooseMoney(12)">1000元</span>
-										<span @click="chooseMoney(13)">2000元</span>
+										<span class="bg_yes" @click="chooseMoney(7)">500</span>
+										<span @click="chooseMoney(8)">1000</span>
+										<span @click="chooseMoney(9)">2000</span>
+										<span @click="chooseMoney(10)">3000</span>
+										<span @click="chooseMoney(11)">5000</span>
+										<span @click="chooseMoney(12)">1000</span>
+										<span @click="chooseMoney(13)">2000</span>
 									</p>
 									<p class="other">
 										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
@@ -81,11 +83,11 @@
 						<!-- 微信支付 -->
 						<li>
 							<p class="font12 mb10">微信支付:<span class="orange">0</span>元</p>
-							<p><img src="/recharge_img/phone.png"></p>
+							<p><img src="/recharge_img/phone.png" class="imgA"></p>
 						</li>
 						<!-- 支付宝支付 -->
 						<li class="none">
-							<p class="font12 mb10">支付宝支付<span class="orange">1000.00</span>元</p>
+							<p class="font12 mb10">支付宝支付<span class="orange">0</span>元</p>
 							<p><img src="/recharge_img/ewm.png"></p>
 						</li>
 						<!-- 网银支付 -->
@@ -116,7 +118,7 @@
 							<div><button id="but">立即充值</button></div>
 						</li>
 					</ul>
-				</div>
+				</form>
 				<!-- 充值到星币 -->
 				<div class="none">
 					<table class="w100 margin">
@@ -277,8 +279,19 @@ export default {
         },
         // 额度选择状态
         chooseMoney(index){
+        	// 点击当前额度添加被选状态的类
         	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
         	$('.other').css("border","none")
+        	// 获取被选择的支付额度
+        	$(".orange").text($('.three>td').children('p').children('span').eq(index).text())
+        	// 以支付额度判断当前该显示的图片
+        	if ($(".orange").text()===0) {
+        		// 额度为0时显示手机图片
+        		$(".imgA").attr("src","/recharge_img/phone.png")
+        	}else{
+        		// 否则显示对应的支付二维码
+        		$(".imgA").attr("src","/recharge_img/ewm.png")
+        	}
         },
         // 其他金额输入框被点击时
         inputText(){
@@ -289,7 +302,22 @@ export default {
       	tabChange(index){
             $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
             $(".tabBd>li").hide().eq(index).show();
+      	},
+      	// 点击span移除输入框的禁用属性并隐藏span标签
+      	remove(){
+      		$(".read").removeAttr("disabled").focus().val("").siblings().css("color","#999");
       	}
+      	// 
+      	// on(){
+      	// 	if ($(".read").val("")!==undefined) {	
+      	// 	  $(".read").removeAttr("disabled").siblings().text("请完善账号").css("color","#FD8F24");
+      	// 	  console.log($(".read").siblings().text())
+      	// 	}
+      	// 	else{
+      	// 	  $(".read").attr("disabled","disabled").siblings().css("color","#999");
+      	// 	  console.log(111)
+      	// 	}
+      	// }
   }			
 }
 </script>
@@ -378,15 +406,6 @@ input{
  	border-left: none;
  	background-color: #FFF0DA;
  }
-
-
-
-
-
-
-
-
- 
  .other input{
  	width: 287px;
  	height: 38px;
@@ -402,9 +421,10 @@ input{
  	text-align: center;
  	margin-right: 15px;
  	overflow: hidden;
+ 	border: 1px solid #DBDBDB
  }
- .three span:hover{
- 	background: url(/recharge_img/yes.png) no-repeat right top;
+ .three span:hover,.tabTit button:hover{
+ 	background: url(/recharge_img/yes.png) no-repeat right -1px top;
  	border: 1px solid #FD8F24;
  	background-color: #F8F8F8;
  }
@@ -441,8 +461,8 @@ input{
  tr{
  	width: 100%;
  }
-.bg_yes{
- 	background: url(/recharge_img/yes.png) no-repeat right top;
+table .bg_yes{
+ 	background: url(/recharge_img/yes.png) no-repeat right -1px top;
  	border: 1px solid #FD8F24;
  	background-color: #F8F8F8;
  }
@@ -480,4 +500,8 @@ input{
 	color: white;
 	margin-top: 85px;
 }
+/*.tabTit button:hover{
+	background: url(/recharge_img/yes.png) no-repeat right -1px top;
+ 	border: 1px solid #FD8F24;
+}*/
 </style>
