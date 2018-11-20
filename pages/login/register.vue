@@ -24,6 +24,8 @@
 </template>
 <style scoped lang="styl">
 @import '~assets/public.styl'
+input:hover
+	border 1px solid #FD8F24
 .register_div
 	public_login_container()
 	.register_top
@@ -53,6 +55,11 @@
 <script>
 export default{
 	layout:'login',
+	head(){
+		return{
+			title:'注册'
+		}
+	},
 	methods:{
 		check_register(){
 			this.$router.push('/login/phone_bind');

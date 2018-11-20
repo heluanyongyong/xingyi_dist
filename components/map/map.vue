@@ -1,12 +1,99 @@
 <template>
+  <div>
+    <no-ssr>
+      <div class="amap-page-container">
+        <el-amap vid="amapDemo" :zoom="zoom" :center="center" class="amap-demo" :plugin="plugin">
+          <el-amap-info-window  :position="mywindow.position" :content="mywindow.content" :visible="mywindow.visible" :events="mywindow.events"></el-amap-info-window>
+          <el-amap-marker :position="marker.position" :events="marker.events" :visible="marker.visible" :draggable="marker.draggable"></el-amap-marker>
+        </el-amap>
+      </div>
+    </no-ssr>
+  </div>
+</template>
+
+<style>
+  .amap-page-container {
+    height: 600px;
+  }
+</style>
+
+
+<script>
+export default {
+  data () {
+    return {
+      zoom: 17,
+      center: [114.06798073351291, 22.63000532679801],
+      marker: {
+        position: [114.06798073351291, 22.63000532679801],
+        events: {
+          click: () => {
+            if (this.mywindow.visible === true) {
+              this.mywindow.visible = false
+            } else {
+              this.mywindow.visible = true
+            }
+          },
+          dragend: (e) => {
+            this.markers[0].position = [e.lnglat.lng, e.lnglat.lat]
+          }
+        },
+        visible: true,
+        draggable: false
+      },
+      mywindow: {
+        position: [114.06798073351291, 22.63000532679801],
+        content: '<h4>深圳星移网络科技有限公司</h4><div class="text item">地址：深圳市龙岗坂田云里智能园3栋C4室</div>',
+        visible: true,
+        events: {
+          close () {
+            this.mywindow.visible = false
+          }
+        }
+      },
+      plugin: [
+        {       
+          pName: 'Scale',
+          events: {
+            init (instance) {
+              console.log(instance)
+            }
+          }        
+        }
+      ]
+    }
+  }
+}
+</script>
+
+<!-- <template>
+  <div>
+    <no-ssr>
+      <div class="amap-wrapper">
+        <el-amap :vid="'amap-vue'"></el-amap>
+      </div>
+    </no-ssr>
+  </div>
+</template>
+<style>
+.amap-wrapper {
+  width: 1200px;
+  height: 800px;
+}
+</style>
+<script>
+export default{
+}
+</script> -->
+<!-- <template>
   <section style="height: 600px;">
     <no-ssr>
       <el-amap vid="amap" :plugin="plugin" class="amap-demo" :center="center" :events="events">
         <el-amap-marker style="width:1200px" v-for="(marker, index) in markers" :position="marker.position"
                         :key="index" :vid="index" :events="marker.events"></el-amap-marker>
         <el-amap-circle :center="circle.center" :radius="circle.radius"
-                        :fill-opacity="0.5" fill-color="#ffb5b3" stroke-color="#ffb5b3"></el-amap-circle>
-        <el-amap-polyline :path="polyline.path"></el-amap-polyline>
+                        :fill-opacity="0.5" fill-color="#ffb5b3" stroke-color="#ffb5b3">
+        </el-amap-circle>
       </el-amap>
     </no-ssr>
   </section>
@@ -20,7 +107,7 @@ export default {
   data() {
     let self = this;
     return {
-      center: [121.59996, 31.197646],
+      center: [114.06798073351291, 22.63000532679801],
       events: {
         init(map) {
           let markers = _.cloneDeep(self.markers);
@@ -61,7 +148,7 @@ export default {
       }],
       markers: [
         {
-          position: [121.59996, 31.197646],
+          position: [114.06798073351291, 22.63000532679801],
           events: {
             click: () => {
               this.$router.push({path: '/single/250'});
@@ -71,7 +158,7 @@ export default {
           clickable: true
         },
         {
-          position: [122.59996, 32.197646],
+          position: [114.06798073351291, 22.63000532679801],
           events: {
             click: () => {
               this.$router.push({path: '/single/250'});
@@ -82,11 +169,8 @@ export default {
         }
       ],
       circle: {
-        center: [121.59996, 31.197646],
+        center: [114.06798073351291, 22.63000532679801],
         radius: 6000
-      },
-      polyline: {
-        path: [[121.59996, 31.1976461], [121.5389385, 31.197646]]
       }
     };
   },
@@ -97,4 +181,4 @@ export default {
   beforeDestroy() {
   }
 };
-</script>
+</script> -->

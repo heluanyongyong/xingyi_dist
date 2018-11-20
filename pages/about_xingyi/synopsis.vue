@@ -20,6 +20,11 @@
 <script>
 import about from '../../components/about.vue'
 export default {
+	head(){
+		return{
+			title:'公司简介'
+		}
+	},
   name: 'synopsis',
   data () {
     return {

@@ -263,6 +263,11 @@
 <script>
 export default {
   name: 'internetbank',
+  head(){
+		return{
+			title:'在线充值'
+		}
+	},
   data () {
     return {
       isShow: false

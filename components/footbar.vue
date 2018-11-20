@@ -2,11 +2,11 @@
 	<div>
 		<div class="footer">
     		<div class="container">
-    			<div class="foot_title">合作伙伴：</div>
+    			<!-- <div class="foot_title">合作伙伴：</div>
 	    		<ul class="foot_list">
 	    			<li v-for="item in 8" :key="item"><a href="javascript:void(0);">星移盒子</a></li>
 	    		</ul>
-	    		<div class="clear"></div>
+	    		<div class="clear"></div> -->
 	    		<ul class="nav_list">
 	    			<li><a href="javascript:void(0);">产品中心</a></li>
 	    			<li>|</li>

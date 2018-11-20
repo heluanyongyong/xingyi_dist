@@ -171,6 +171,11 @@
 <script>
 export default {
   name: 'personal',
+  head(){
+		return{
+			title:'个人中心'
+		}
+	},
   data () {
     return {
       // 实名认证

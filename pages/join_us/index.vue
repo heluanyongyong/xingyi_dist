@@ -115,6 +115,11 @@
 <script>
 export default {
   name: 'join',
+  head(){
+    return{
+      title:'加入我们'
+    }
+  },
   data () {
     return {
 

@@ -3,7 +3,7 @@
 		<div class="clearfix container ptb3">
 			<div>"天命"搜索到<span>3</span>条相关的内容</div>
 			<ul class="bgWhite clearfix">
-				<li class="clearfix">
+				<li class="clearfix" @click="click_games">
 					<img src="/games_list/games1.png" class="fl">
 					<div class="fl clearfix data_box font16">
 						<h2>天命奇御</h2>
@@ -13,7 +13,6 @@
 						</div>
 						<div class="fl">
 							<p>更新时间：<span>2017-10-23</span></p>
-							<p>状态：<span>公测</span></p>
 						</div>
 					</div>
 				</li>
@@ -27,7 +26,6 @@
 						</div>
 						<div class="fl">
 							<p>更新时间：<span>2017-10-23</span></p>
-							<p>状态：<span>公测</span></p>
 						</div>
 					</div>
 				</li>
@@ -41,7 +39,6 @@
 						</div>
 						<div class="fl">
 							<p>更新时间：<span>2017-10-23</span></p>
-							<p>状态：<span>公测</span></p>
 						</div>
 					</div>
 				</li>
@@ -53,10 +50,20 @@
 <script>
 export default {
   name: 'grabble',
+  head(){
+		return{
+			title:'搜索列表'
+		}
+	},
   data () {
     return {
       
     }
+  },
+  methods:{
+  	click_games(){
+  		this.$router.push('/games_center/infos');
+  	}
   }
 }
 </script>

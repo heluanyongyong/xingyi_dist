@@ -12,18 +12,22 @@
 							<div><img src="/games_center/退出@2x.png" alt=""><span> 退出</span></div>
 						</div>
 					</li> -->
-					<li>
+					<li v-if="account!=true">
 						<nuxt-link to="/login" class="active">登录</nuxt-link>
 						 | 
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
-					<li>
-						<a href="javascript:void(0);"><img src="/games_center/message.png" alt="" @click="$router.push('/message')"></a>
+					<li v-if="account=='true'">
+						<img src="/games_center/pic1.png" alt="" @click="$router.push('/personal_center')">
+						<span><nuxt-link to="/personal_center">星移盒子</nuxt-link></span>
+					</li>
+					<li v-if="account=='true'">
+						<img src="/games_center/message.png" alt="" @click="$router.push('/message')">
 						<span><nuxt-link to="/message">消息</nuxt-link></span>
 					</li>
-					<li>
-						<a href="javascript:void(0);"><img src="/games_center/tuichu.png" alt="" @click="$router.push('login')"></a>
-						<span><nuxt-link to="/login">退出</nuxt-link></span>
+					<li v-if="account=='true'">
+						<img src="/games_center/tuichu.png" alt="" @click="logout">
+						<span><nuxt-link @click.native="logout" to="/login">退出</nuxt-link></span>
 					</li>
 					<li>
 						<div class="pos_div">
@@ -46,7 +50,7 @@
 						<li><nuxt-link to="/games_center">游戏中心</nuxt-link></li>
 						<li><nuxt-link to="/download_center">下载中心</nuxt-link></li>
 						<li><nuxt-link to="/on_recharge">在线充值</nuxt-link></li>
-						<li><nuxt-link to="/about_xingyi/synopsis">关于星移</nuxt-link></li>
+						<li><nuxt-link to="/about_xingyi">关于星移</nuxt-link></li>
 						<li><nuxt-link to="/business_work">商务合作</nuxt-link></li>
 						<li><nuxt-link to="/contact_us">联系我们</nuxt-link></li>
 						<li><nuxt-link to="/join_us">加入星移</nuxt-link></li>
@@ -124,6 +128,10 @@ top1_h=50px
 						color #FD8F24
 				img,a,span
 					vertical-align middle
+				img
+					margin-right 2px
+					&:last-child
+						margin-right 1px
 				.pos_div
 					width 160px
 					position relative
@@ -134,9 +142,6 @@ top1_h=50px
 						height 30px
 						border-radius 10px
 						padding 0 40px 0 20px
-						&:hover
-							border none
-							outline 1px solid #FD8F24
 					.inner_img
 						width 10px
 						position absolute
@@ -191,6 +196,14 @@ top2_h=80px
 </style>
 <script>
 export default{
+	mounted(){
+		this.account=sessionStorage.getItem('account');
+	},
+	data(){
+		return{
+			account:''
+		}
+	},
 	methods:{
 		click_logo(){
 			this.$router.push('/download_center');
@@ -199,6 +212,10 @@ export default{
 			if(e.keyCode==13){
 				this.$router.push('/grabble');
 			}
+		},
+		logout(){
+			sessionStorage.setItem('account',"");
+			this.$router.push('login');
 		}
 	}
 }

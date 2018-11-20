@@ -58,6 +58,8 @@
 
 <style scoped lang="styl">
 @import '~assets/public.styl'
+input:hover
+	border 1px solid #FD8F24
 .login_div
 	float right
 	public_login_container()
@@ -116,6 +118,11 @@
 <script>
 export default{
 	layout:'login',
+	head(){
+		return{
+			title:'登陆'
+		}
+	},
 	data(){
 		return{
 			password:''
@@ -136,6 +143,7 @@ export default{
 			if(this.password==''){
 				$('.login_info').removeClass('hide');
 			}else{
+				sessionStorage.setItem('account',"true");
 				this.$router.push('/download_center');
 			}
 		}

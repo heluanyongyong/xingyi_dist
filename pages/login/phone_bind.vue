@@ -16,6 +16,8 @@
 </template>
 <style scoped lang="styl">
 @import '~assets/public.styl'
+input:hover
+	border 1px solid #FD8F24
 .out_big
 	padding 150px 0
 .phonebind_div
@@ -51,6 +53,11 @@
 import model from '../../components/dialog/confirm.vue'
 export default{
 	layout:'login',
+	head(){
+		return{
+			title:'绑定手机'
+		}
+	},
 	data() {
     	return{
     		

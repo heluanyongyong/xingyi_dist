@@ -54,6 +54,11 @@
 import about from '../../components/about.vue'
 export default {
   name: 'prog',
+  head(){
+		return{
+			title:'发展历程'
+		}
+	},
   data () {
     return {
       

@@ -60,7 +60,7 @@
     							<div class="divcontent">
     								<div class="imgdiv">
     									<img src="/games_center/gamelist1.png" alt="">
-    									<div class="pos_info">
+    									<div class="pos_info" @click="img_active">
     										<div class="info"><nuxt-link to="/games_center/infos">查看详情 >></nuxt-link></div>
     									</div>
     								</div>
@@ -80,9 +80,14 @@
 
 <script>
 export default{
+	head: {
+	    title:'游戏中心'
+	},
+	mounted(){
+		
+	},
     data(){
     	return{
-    		
     	}
     },
     methods:{
@@ -100,6 +105,9 @@ export default{
     	change_tablepages(index){
     		$('.content_left_bottom tfoot span').eq(index).addClass('active').siblings().removeClass('active');
     		$('.content_left_bottom tbody').fadeOut().fadeIn(250);
+    	},
+    	img_active(){
+    		this.$router.push('/games_center/infos');
     	}
     }
 }

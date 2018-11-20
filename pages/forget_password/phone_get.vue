@@ -27,6 +27,11 @@
 </style>
 <script>
 export default{
+	head(){
+		return{
+			title:'找回密码'
+		}
+	},
 	methods:{
 		next_modifyPassword(){
 			this.$router.push('/forget_password/password_modify');

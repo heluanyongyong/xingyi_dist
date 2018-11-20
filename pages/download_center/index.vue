@@ -50,6 +50,11 @@
 <script>
 export default {
   name: 'DownloadCenter',
+  head(){
+    return{
+      title:'下载中心'
+    }
+  },
   data () {
     return {
       

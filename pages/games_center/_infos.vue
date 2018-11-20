@@ -15,7 +15,7 @@
 							</ul>
 							<ul>
 								<li>更新时间：<span>2017-10-23</span></li>
-								<li>状态：<span>公测</span></li>
+								<!-- <li>状态：<span>公测</span></li> -->
 							</ul>
 						</div>
 						<div class="top1_right">
@@ -331,6 +331,11 @@
 </style>
 <script>
 export default{
+	head(){
+		return{
+			title:'游戏详情'
+		}
+	},
 	data(){
 		return{
 			modal_change: false,
@@ -341,6 +346,8 @@ export default{
 		change_list(index){
 			$('.center .game_list ul li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
 			$('.center .game_content>div').eq(index).addClass('active').siblings().removeClass('active');
+			var _index=index+1;
+			$(`.info${_index}`).hide().fadeIn(500);
 		},
 		change_imglist(index,name){
 			$('.imglist li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');

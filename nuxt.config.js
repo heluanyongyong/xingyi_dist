@@ -11,7 +11,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'logo.ico' }
     ]
   },
   /*
@@ -39,12 +39,11 @@ module.exports = {
       new webpack.ProvidePlugin({
           '$':'jquery'
       })
-    ],
-    vender:['element-ui']
+    ]
   },
   plugins: [
     {src:'~plugins/element-ui', ssr: true},
-    {src:'~plugins/vue-map', ssr: true}
+    {src:'~plugins/vue-map'}
   ],
   css: [
     {

@@ -26,24 +26,25 @@
 			</div>
 			<div class="center">
 				<ul>
-					<li class="active">
-						<input @click="select_one(0)" v-model="default_checkboxs[0]" class="checkbox" type="checkbox" name="" id="">
-						<img @click="goto_message" src="/message/message_active.png" alt="">
-						<span @click="goto_message" class="type">服务消息</span>
-						<span @click="goto_message" class="info">星移网络科技提醒您充值成功</span>
+					<li class="active" @click="goto_message">
+						<input @click.stop="select_one(0)" v-model="default_checkboxs[0]" class="checkbox" type="checkbox" name="" id="">
+						<img src="/message/message_active.png" alt="">
+						<span class="type">服务消息</span>
+						<span class="info">星移网络科技提醒您充值成功</span>
 						<span class="time">11.20</span>
 					</li>
-					<li v-for="item in 9" :key="item">
-						<input @click="select_one(item)" v-model="default_checkboxs[item]" class="checkbox" type="checkbox" name="" id="">
-						<img @click="goto_message" src="/message/message_active.png" alt="">
-						<span @click="goto_message" class="type">服务消息</span>
-						<span @click="goto_message" class="info">星移网络科技提醒您充值成功</span>
+					<li v-for="item in 9" :key="item" @click="goto_message">
+						<input @click.stop="select_one(item)" v-model="default_checkboxs[item]" class="checkbox" type="checkbox" name="" id="">
+						<img src="/message/message_default.png" alt="">
+						<span class="type">服务消息</span>
+						<span class="info">星移网络科技提醒您充值成功</span>
 						<span class="time">11.20</span>
 					</li>
 				</ul>
 			</div>
 			<div class="bottom">
 				<el-pagination
+					@current-change="handleCurrentChange"
 					background
 					layout="prev, pager, next"
 					:total="1000">
@@ -131,6 +132,7 @@
 				img
 					margin-left 15px
 					cursor pointer
+					width 26px
 				.type
 					cursor pointer
 					margin-left 10px
@@ -155,6 +157,11 @@
 </style>
 <script>
 export default{
+	head(){
+		return{
+			title:'消息列表'
+		}
+	},
 	mounted(){
 		// 初始化，所有的表单默认不选中
 		for(var i=0;i<$('.center li input').length;i++){
@@ -171,6 +178,7 @@ export default{
 	methods:{
 		change_messageType(index){
 			$('.top_left').find('a').eq(index).addClass('active').parent().find('.pos').addClass('active').parent().siblings().find('a').removeClass('active').parent().find('.pos').removeClass('active');
+			$('.center ul').fadeOut().fadeIn(500);
 		},
 		// 点击全选按钮
 		select_all(){
@@ -186,6 +194,12 @@ export default{
 		},
 		goto_message(){
 			this.$router.push('/message/infos');
+		},
+		change_page(){
+			console.log('hello world');
+		},
+		handleCurrentChange(){
+			$('.center ul').fadeOut().fadeIn(500);
 		}
 	},
 	watch:{

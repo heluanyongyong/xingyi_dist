@@ -144,6 +144,11 @@
 <script>
 export default {
   name: 'honor',
+  head(){
+		return{
+			title:'充值记录'
+		}
+	},
   data () {
     return {
     	

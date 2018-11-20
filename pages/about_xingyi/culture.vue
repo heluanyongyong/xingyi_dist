@@ -40,6 +40,11 @@
 import about from '../../components/about.vue'
 export default {
   name: 'culture',
+  head(){
+		return{
+			title:'企业文化'
+		}
+	},
   data () {
     return {
       

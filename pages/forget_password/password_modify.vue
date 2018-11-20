@@ -40,6 +40,11 @@
 <script>
 import model from '../../components/dialog/confirm.vue'
 export default{
+	head(){
+		return{
+			title:'找回密码'
+		}
+	},
 	components:{
 		model
 	}

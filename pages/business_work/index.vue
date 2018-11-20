@@ -79,9 +79,6 @@
 	.container
 		text-align center
 		padding 40px 0 80px 0
-		p
-			input
-				margin-left 20px
 		.p1
 			font-size 24px
 			margin-bottom 15px
@@ -102,21 +99,24 @@
 			public_inputWidth(size)
 				input
 					width size
+					/*border 1px solid red*/
+					height 50px
+					padding 0 15px
 			.d1
 				border-bottom 1px solid rgb(208,208,208)
-				padding-bottom 10px
-				margin-bottom 20px
-				public_inputWidth(336px)
+				/*padding-bottom 10px*/
+				/*margin-bottom 20px*/
+				public_inputWidth(404px)
 			.d2_l
 				width 42%
 				float left
-				public_inputWidth(100px)
+				public_inputWidth(132px)
 			.d2_r
 				width 42%
 				float right
-				public_inputWidth(100px)
+				public_inputWidth(132px)
 			.d3
-				public_inputWidth(350px)
+				public_inputWidth(388px)
 			.button
 				text-align center
 				margin 35px 0 10px 0
@@ -132,6 +132,11 @@
 </style>
 <script>
 export default{
+	head(){
+		return{
+			title:'商务合作'
+		}
+	},
 	data(){
 		return{
 			modal_change: false

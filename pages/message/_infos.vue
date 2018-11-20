@@ -40,6 +40,10 @@
 </style>
 <script>
 export default{
-
+	head(){
+		return{
+			title:'消息详情'
+		}
+	},
 }
 </script>

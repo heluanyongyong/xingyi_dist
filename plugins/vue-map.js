@@ -1,8 +1,6 @@
 import Vue from 'vue';
 import VueAMap from 'vue-amap';
 Vue.use(VueAMap);
-
-// 初始化vue-amap
 if (!Vue.prototype.$isServer) {
   VueAMap.initAMapApiLoader({
     // 高德的key
