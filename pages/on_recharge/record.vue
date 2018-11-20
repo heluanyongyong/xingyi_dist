@@ -5,8 +5,8 @@
 			<div class="wBtBorder box">
 				<ul class="top_ul clearfix">
 					<li @click="liChange(0)" class="liClick">充值到游戏</li>
-					<li @click="liChange(1)">充值到星币</li>
-					<li @click="liChange(2)">星币充游戏</li>
+					<li @click="liChange(1)">充值到金元宝</li>
+					<li @click="liChange(2)">金元宝充游戏</li>
 				</ul>
 			</div>
 			<!-- 充值到游戏 -->
@@ -56,7 +56,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<!-- 充值到星币 -->
+			<!-- 充值到金元宝 -->
 			<table class="black none">
 				<thead class="font18">
 					<tr>
@@ -88,7 +88,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<!-- 星币充游戏 -->
+			<!-- 金元宝充游戏 -->
 			<table class="black none">
 				<thead class="font18">
 					<tr>

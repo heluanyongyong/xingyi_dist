@@ -1,6 +1,6 @@
 <template>
 	<div>
-   <div><img src="/about_img/header.png"></div>
+   <div><img src="/about_img/header.png" class="w100"></div>
    <div class="container ptb3">
      <h1>加入我们</h1>
      <table class="container tc font20">
@@ -137,6 +137,9 @@ export default {
 </script>
 
 <style scoped>
+.w100{
+  width: 100%
+}
 h1{
   margin-bottom: 36px;
 }
@@ -151,13 +154,13 @@ th,td{
   color:  #686868;
 }
 tbody tr:hover{
-  background-color: #F3F3F5
+  background-color: #F3F3F5;
 }
 /*工作详情*/
 .join_box{
   font-size: 14px;
   color: #747474;
-  margin-left: 90px;
+  margin-left: 72px;
 }
 ul li{
   width: 260px;

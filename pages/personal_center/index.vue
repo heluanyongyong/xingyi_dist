@@ -202,9 +202,6 @@ export default {
 .modal_box p:nth-child(3){
 	margin: 17px 0 31px 0;
 }
-.modal_box p:nth-child(1){
-	margin-bottom: 57px;
-}
 #num{
    width: 255px;
 }

@@ -3,21 +3,21 @@
 		<about></about>
 		<div class="container clearfix ptb3">
 			<ul class="grey font36 ul_left wrBorder1 clearfix fl">
-				<li>2018-5</li>
-				<li>2018-2</li>
+				<li>2017-1</li>
+				<!-- <li>2018-2</li>
 				<li>2017-7</li>
 				<li>2017-2</li>
-				<li>2016-7</li>
+				<li>2016-7</li> -->
 			</ul>
 			<ul class="ul_right tl fr">
 				<li class="clearfix">
 					<div>
-						<div>伊步慈善，一个有爱的健康倡导者</div>
-						<p>5月22日，广东伊步网络科技有限公司与深圳市慈善会成立的深圳市慈善会伊步慈善基金正式挂牌运营了</p>
+						<div>深圳星移网络科技有限公司成立</div>
+						<p>2017年1月6日，深圳星移网络科技有限公司正式成立</p>
 					</div>
-					<img src="/about_img/one.png" alt="图片加载中..">
+					<img src="/about_img/logo.png" alt="图片加载中.." class="mid">
 				</li>
-				<li class="clearfix">
+				<!-- <li class="clearfix">
 					<div>
 						<div>2018年年会</div>
 						<p>大步跨过了2017年，我们用汗水耕耘，去描绘伊步更好的未来</p>
@@ -44,7 +44,7 @@
 						<p>走过了收获的秋天，寒冷的冬天，希望的春天，我们迎来了充满期待的夏天，我们满情壮志的迎来了公司二周年庆典</p>
 					</div>
 					<img src="/about_img/five.png" alt="图片加载中..">
-				</li>
+				</li> -->
 			</ul>
 		</div>
 	</div>
@@ -89,6 +89,7 @@ export default {
 .ul_right img{
 	float: right;
 	width: 183px;
+
 }
 .ul_right p{
 	font-size: 18px;
@@ -100,5 +101,6 @@ export default {
 }
 .ul_right div{
 	font-size: 32px;
+	margin-bottom: 30px;
 }
 </style>

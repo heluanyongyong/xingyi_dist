@@ -9,15 +9,15 @@
                         <div class="arrow-down b"></div>
 					</li>
 					<li @click="headChange(1)">
-						充值到星币
+						充值到金元宝
                        <div class="arrow-down"></div>
 					</li>
 					<li @click="headChange(2)">
-					   星币充值到游戏
+					   金元宝充值到游戏
 					   <div class="arrow-down"></div>
 					</li>
 				</ul>
-				<div class="fr font18"><nuxt-link to="/on_recharge/record" tag="span">
+				<div class="fr font18"><nuxt-link to="/on_recharge/record" tag="a">
 					充值记录>>
 				</nuxt-link></div>
 			</div>
@@ -29,7 +29,7 @@
 							<tr class="one">
 								<td>充值账号：</td>
 								<td>
-                                    <input type="text" value="星移" disabled class="read" required="required"><span @click="remove()">更改帐号</span>
+                                    <input type="text" value="星移" disabled class="read" required="required" @blur="textChange()"><span @click="remove()">更改帐号</span>
 								</td>
 							</tr>
 							<tr class="two">
@@ -65,7 +65,7 @@
 										<span @click="chooseMoney(13)">2000</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()" placeholder="请输入数值">
 									</p>
 								</td>
 							</tr>
@@ -82,7 +82,7 @@
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
 						<li>
-							<p class="font12 mb10">微信支付:<span class="orange">0</span>元</p>
+							<p class="font12 mb10 bg_yes">微信支付:<span class="orange">0</span>元</p>
 							<p><img src="/recharge_img/phone.png" class="imgA"></p>
 						</li>
 						<!-- 支付宝支付 -->
@@ -95,36 +95,36 @@
 							<div class="fl ml1 font18">选择银行：</div>
 							<div class="five fl ml2">
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img1.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img2.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img3.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img1.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img2.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img3.png"></span>
 								</p>
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img4.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img5.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img6.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img4.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img5.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img6.png"></span>
 								</p>
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img7.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img8.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img9.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img7.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img8.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img9.png"></span>
 								</p>
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img10.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img11.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img12.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img10.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img11.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img12.png"></span>
 								</p>
 							</div>
 							<div><button id="but">立即充值</button></div>
 						</li>
 					</ul>
 				</div>
-				<!-- 充值到星币 -->
+				<!-- 充值到金元宝 -->
 				<div class="none">
 					<table class="w100 margin">
 						<tbody>
 							<tr class="one">
-								<td>我的星币：</td>
+								<td>我的金元宝：</td>
 								<td><span>100</span></td>
 							</tr>
 							<tr class="three">
@@ -152,8 +152,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td>星币说明：</td>
-								<td><span>星币比例1:1，例如充值100元得100星币；</span></td>
+								<td>金元宝说明：</td>
+								<td><span class="orange">金元宝比例1:1，例如充值100元得100金元宝；</span></td>
 							</tr>
 							<tr class="four">
 								<td>支付方式：</td>
@@ -181,38 +181,38 @@
 							<div class="fl ml1 font18">选择银行：</div>
 							<div class="five fl ml2">
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img1.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img2.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img3.png"></span>
+									<span><input type="radio" name="bankbank"><img src="/recharge_img/img1.png"></span>
+									<span><input type="radio" name="bankbank"><img src="/recharge_img/img2.png"></span>
+									<span><input type="radio" name="bankbank"><img src="/recharge_img/img3.png"></span>
 								</p>
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img4.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img5.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img6.png"></span>
+									<span><input type="radio" name="bankbank"><img src="/recharge_img/img4.png"></span>
+									<span><input type="radio" name="bankbank"><img src="/recharge_img/img5.png"></span>
+									<span><input type="radio" name="bankbank"><img src="/recharge_img/img6.png"></span>
 								</p>
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img7.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img8.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img9.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img7.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img8.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img9.png"></span>
 								</p>
 								<p>
-									<span><input type="radio" name=""><img src="/recharge_img/img10.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img11.png"></span>
-									<span><input type="radio" name=""><img src="/recharge_img/img12.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img10.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img11.png"></span>
+									<span><input type="radio" name="bank"><img src="/recharge_img/img12.png"></span>
 								</p>
 							</div>
 							<div><button id="but">立即充值</button></div>
 						</li>
 					</ul>
 				</div>
-				<!-- 星币充值到游戏 -->
+				<!-- 金元宝充值到游戏 -->
 				<div class="none">
 					<table class="w100 margin">
 						<tbody>
 							<tr class="one">
 								<td>充值账号：</td>
 								<td><input type="text" name="name" value="星移"><span class="none">更改帐号</span>
-									<span>我的星币：</span>
+									<span>我的金元宝：</span>
 									<span>10000</span>
 								</td>
 							</tr>
@@ -228,7 +228,7 @@
 								</td>
 							</tr>
 							<tr class="three">
-								<td>选择星币：</td>
+								<td>选择金元宝：</td>
 								<td>
 									<p>
 										<span @click="chooseMoney(28)">10</span>
@@ -238,7 +238,7 @@
 										<span @click="chooseMoney(32)">100</span>
 										<span @click="chooseMoney(33)">200</span>
 										<span @click="chooseMoney(34)">300</span><br>
-										<span class="bg_yes" @click="chooseMoney(35)">500</span>
+										<span @click="chooseMoney(35)">500</span>
 										<span @click="chooseMoney(36)">1000</span>
 										<span @click="chooseMoney(37)">2000</span>
 										<span @click="chooseMoney(38)">3000</span>
@@ -255,6 +255,20 @@
 					</table>
 					<div class="tc"><button id="but">立即充值</button></div>
 				</div>
+			</div>
+		</div>
+		<!-- 信息完善认证 -->
+		<div class="none">
+			<!-- 背景框 -->
+		    <div class="modal"></div>
+		    <!-- 内容 -->
+			<div class="modal_box tl">
+				<p class="font24 grey ">信息完善</p>
+				<p><input type="text" name="" placeholder="真实姓名"></p>
+				<p><input type="text" name="" placeholder="身份证号码"></p>
+				<p><input type="text" name="" placeholder="手机号码"></p>
+				<p><input type="text" name="" placeholder="验证码" id="num"><input type="button" name="" value="获取验证码" id="num_but"></p>
+				<p><input type="button" name="" value="确定" class="white bgOrange"></p>
 			</div>
 		</div>
 	</div>
@@ -281,7 +295,7 @@ export default {
         	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
         	$('.other').css("border","none")
         	// 获取被选择的支付额度
-        	$(".orange").text($('.three>td').children('p').children('span').eq(index).text())
+        	$(".orange").text($('.three>td').children('p').children('span').eq(index).text()+".00")
         	// 以支付额度判断当前该显示的图片
         	if ($(".orange").text()===0) {
         		// 额度为0时显示手机图片
@@ -300,27 +314,84 @@ export default {
       	tabChange(index){
             $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
             $(".tabBd>li").hide().eq(index).show();
+            // 其他金额输入框的要求 仅数字
+    		var reg = $(".inputText").val().match(/\d+\.?\d{0,10}/);
+    		// 当输入值不为空
+    		if (reg!=null) {
+    			//对输入带小数点的值添加向下取整的方法
+    			$(".inputText").val(Math.floor($(".inputText").val()))
+    			// 支付额度获取输入的值
+    			$(".orange").text($(".inputText").val()+".00")
+    			// 当支付额度不为0或输入值为NaN时
+              if ($(".orange").text()===0 || $(".inputText").val()==="NaN") {
+              	// 清空输入值，支付额度为0，显示手机图片
+              	$(".inputText").val("")
+    			    $(".orange").text("0")
+              	$(".imgA").attr("src","/recharge_img/phone.png")
+              }else{
+              	// 否则显示对应的支付二维码
+              	$(".imgA").attr("src","/recharge_img/ewm.png")
+              }
+              console.log(typeof $(".inputText").val())
+    		}
+    		else{
+    			$(".inputText").val("")
+    			$(".orange").text("0")
+    		}
       	},
-      	// 点击span移除输入框的禁用属性并隐藏span标签
+      	// 点击span移除输入框的禁用属性并改变span标签颜色
       	remove(){
-      		$(".read").removeAttr("disabled").focus().val("").siblings().css("color","#999");
+      		var text=$(".read").val()
+      		$(".read").removeAttr("disabled").val('').focus().val(text).siblings().css("color","#999");
+      	},
+      	// 充值账号的内容被修改
+      	textChange(){
+      		// 当内容为空时
+      		if ($(".read").val()==="") {
+      		  //移除输入框的禁用属性，改变span的提示内容 
+      		  $(".read").removeAttr("disabled").siblings().text("请完善账号").css("color","#FD8F24");
+      		}
+      		else {
+      		  $(".read").attr("disabled","disabled").siblings().text("更改帐号").css("color","#FD8F24");
+      		}
       	}
-      	// 
-      	// on(){
-      	// 	if ($(".read").val("")!==undefined) {	
-      	// 	  $(".read").removeAttr("disabled").siblings().text("请完善账号").css("color","#FD8F24");
-      	// 	  console.log($(".read").siblings().text())
-      	// 	}
-      	// 	else{
-      	// 	  $(".read").attr("disabled","disabled").siblings().css("color","#999");
-      	// 	  console.log(111)
-      	// 	}
-      	// }
   }			
 }
 </script>
 
 <style scoped>
+a:hover{
+	color:#FD8F24;
+}
+/*信息完善*/
+.modal_box{
+	height: 540px;
+}
+.modal_box input{
+	width: 398px;
+	height: 50px;
+}
+.modal_box p:nth-child(1){
+	padding-bottom: 23px;
+	border-bottom: 1px solid #EEEEEE;
+	margin-right: 63px;
+	margin-bottom: 33px
+}
+.modal_box p:nth-child(6){
+	margin-top: 30px
+}
+.modal_box p{
+    margin-bottom: 17px;
+}
+#num{
+	width: 254px;
+}
+#num_but{
+	width: 144px;
+	background-color: white;
+	color: #FD8F24;
+	border-left: none;
+}
 .head_ul .b{
 	display: block;
 }
@@ -377,7 +448,7 @@ li>p{
 }
 .abs{
 	position: absolute;
-	top: 30px;
+	top: 35px;
 	left: 10px;
 }
 input,button{
@@ -422,7 +493,7 @@ input{
  	border: 1px solid #DBDBDB
  }
  .three span:hover,.tabTit button:hover{
- 	background: url(/recharge_img/yes.png) no-repeat right -1px top;
+ 	/*background: url(/recharge_img/yes.png) no-repeat right -1px top;*/
  	border: 1px solid #FD8F24;
  	background-color: #F8F8F8;
  }
@@ -498,6 +569,8 @@ table .bg_yes{
 	color: white;
 	margin-top: 85px;
 }
+
+
 /*.tabTit button:hover{
 	background: url(/recharge_img/yes.png) no-repeat right -1px top;
  	border: 1px solid #FD8F24;

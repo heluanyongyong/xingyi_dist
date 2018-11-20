@@ -6,9 +6,10 @@
 @css{
   body{width: 100%;padding: 0;margin: 0 auto;line-height: 1.5;
   font-family: Helvetica Neue,Helvetica,STHeiTi,sans-serif;}
-  html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0 auto;}
+  html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0 auto;cursor:pointer;}
   /*label {cursor:pointer;}*/
-  *{cursor:pointer;}
+  /**{cursor:pointer;}*/
+  dd,li,h1,h2,h3,h4,h5,h6,input,p,th,td,span,a{cursor:pointer;}
   ul,ul>li{list-style:none;}
   em,b,i,u{font-style:normal;font-weight:normal;text-decoration:none;}
   table{border-collapse:collapse;}
@@ -101,6 +102,12 @@
     bottom: 25%;
     right: 25%;
     padding: 40px 0 0 62px;
+  }
+  .modal_box p:nth-child(1){
+    padding-bottom: 23px;
+    border-bottom: 1px solid #EEEEEE;
+    margin-right: 63px;
+    margin-bottom: 33px
   }
   .el-pagination li.active {
   background: #FD8F24 !important;

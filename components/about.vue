@@ -5,8 +5,8 @@
 	  	<li><nuxt-link to="/about_xingyi/synopsis" tag="span">公司简介</nuxt-link></li>
 	  	<li><nuxt-link to="/about_xingyi/prog" tag="span">发展历程</nuxt-link></li>
 	  	<li><nuxt-link to="/about_xingyi/culture" tag="span">企业文化</nuxt-link></li>
-	  	<li><nuxt-link to="/about_xingyi/team" tag="span">团队介绍</nuxt-link></li>
-	  	<li><nuxt-link to="/about_xingyi/honor" tag="span">企业荣誉</nuxt-link></li>
+	  	<!-- <li><nuxt-link to="/about_xingyi/team" tag="span">团队介绍</nuxt-link></li> -->
+	  	<!-- <li><nuxt-link to="/about_xingyi/honor" tag="span">企业荣誉</nuxt-link></li> -->
 	  </ul>
 	</div>
 </template>

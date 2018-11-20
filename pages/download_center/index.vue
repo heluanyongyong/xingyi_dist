@@ -4,14 +4,15 @@
       <div class="clearfix pt5 container">
         <div class="tc fl w30 rel">
           <img src="/down_img/box.png" alt="图片加载中.." class="mt160">
-          <img src="/down_img/star.png" alt="图片加载中.." class="abs">
+          <img src="/down_img/star.png" alt="图片加载中.." class="abs animate-bounce-down">
         </div>
-        <div class="tl white fr">
+        <div class="tl white fr mr205 div1" @load="loading()">
           <p class="mb116">
             <img src="/down_img/text1.png" alt="文字加载中.." class="w50">
           </p>
-          <p class="bgYellow black borR20 tc mar0">
+          <p class="bgYellow black borR20 tc mar0 rel">
             <img src="/down_img/download.png" class="mid"> <a href="javascript:" id="a" class="mid">下载星移盒子APP</a>
+            <img src="/down_img/app.png" class="app_abs">
           </p>
         </div>
       </div>
@@ -59,69 +60,138 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.download_bgimg1{
-  width: 100%;
-  height: 910px;
-  background: url(../../static/down_img/download_bgimg.png) no-repeat center center;
-}
-.download_bgimg2{
-  width: 100%;
-  background: url(../../static/down_img/download_bgimg2.png) no-repeat center center;
-}
-.borR20{
-  border-radius:40px;
-  width: 360px;
-  line-height: 80px;
-}
-.download_div1{
-  padding: 136px 0;
-}
-body .mar0{
-  margin: 0;
-}
-.abs{
-  position: absolute;
-  top: 4%;
-  right: 13%;
-}
-.rel{
-  position: relative;
-}
-.pt5{
-  padding-top: 145px;
-}
-.mb116{
-  margin: 50px 0 116px 0;
-}
-li a{
-  color: #fff;
-  font-size: 30px;
-}
-li{
-  float: left;
-  margin-top: 124px;
-}
-li:nth-child(2){
-  margin: 124px 230px 0 230px;
-}
-.bgYellow{
-  background-color: #FDD300
-}
-.mt45{
-  margin-top: 45px;
-}
-#a{
-  color: black;
-  font-size:27px;
-}
-.font24 a{
-  color: #999
-}
-.pd175{
-  padding: 175px 0;
-}
-.mt160{
-  margin-top: 160px;
+<style scoped lang="styl">
+/*@import '~assets/animate.styl'*/
+@css{
+  .app_abs{
+    position: absolute;
+    left: 80px;
+    top: 75px;
+    display: none;
+  }
+  .borR20:hover .app_abs{
+    display: block;
+  }
+  .mr205{
+    margin-right: 205px;
+  }
+  .download_bgimg1{
+    width: 100%;
+    height: 620px;
+    background: url(../../static/down_img/download_bgimg.png) no-repeat center center;
+  }
+  .download_bgimg2{
+    width: 100%;
+    background: url(../../static/down_img/download_bgimg2.png) no-repeat center center;
+  }
+  .borR20{
+    border-radius:35px;
+    width: 317px;
+    line-height: 70px;
+  }
+  .download_div1{
+    padding: 115px 0;
+    height: 875px;
+  }
+  body .mar0{
+    margin: 0;
+  }
+  .abs{
+    position: absolute;
+    top: 6%;
+    right: 8%;
+  }
+  /*上下移动动画*/
+  @-webkit-keyframes bounce-down {
+      25% {
+          -webkit-transform: translateY(-10px);
+      }
+      50%, 100% {
+          -webkit-transform: translateY(0);
+      }
+      75% {
+          -webkit-transform: translateY(10px);
+      }
+  }
+  @keyframes bounce-down {
+      25% {
+          transform: translateY(-10px);
+      }
+      50%, 100% {
+          transform: translateY(0);
+      }
+      75% {
+          transform: translateY(10px);
+      }
+  }
+  .animate-bounce-down{
+      -webkit-animation: bounce-down 1.5s linear infinite;
+      animation: bounce-down 1.5s linear infinite;
+  }
+  @-webkit-keyframes bounce-up {
+      25% {
+          -webkit-transform: translateY(10px);
+      }
+      50%, 100% {
+          -webkit-transform: translateY(0);
+      }
+      75% {
+          -webkit-transform: translateY(-10px);
+      }
+  }
+  @keyframes bounce-up {
+      25% {
+          transform: translateY(10px);
+      }
+      50%, 100% {
+          transform: translateY(0);
+      }
+      75% {
+          transform: translateY(-10px);
+      }
+  }
+  .animate-bounce-up{
+      -webkit-animation: bounce-up 1.4s linear infinite;
+      animation: bounce-up 1.4s linear infinite;
+  }
+  .rel{
+    position: relative;
+  }
+  .pt5{
+    /*padding-top: 145px;*/
+  }
+  .mb116{
+    margin: 80px 0 57px 0;
+  }
+  li a{
+    color: #fff;
+    font-size: 24px;
+  }
+  li{
+    float: left;
+    margin-top: 115px;
+  }
+  li:nth-child(2){
+    margin: 124px 230px 0 230px;
+  }
+  .bgYellow{
+    background-color: #FDD300
+  }
+  .mt45{
+    margin-top: 45px;
+  }
+  #a{
+    color: black;
+    font-size:20px;
+  }
+  .font24 a{
+    color: #999
+  }
+  .pd175{
+    padding: 155px 0;
+  }
+  .mt160{
+    margin: 160px 0 60px 0;
+  }
 }
 </style>
