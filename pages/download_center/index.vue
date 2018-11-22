@@ -3,14 +3,14 @@
     <div  class="download_bgimg1">
       <div class="clearfix pt5 container">
         <div class="tc fl w30 rel">
-          <img src="/down_img/box.png" alt="图片加载中.." class="mt160">
+          <img src="/down_img/box.png" alt="图片加载中.." class="mt160 wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
           <img src="/down_img/star.png" alt="图片加载中.." class="abs animate-bounce-down">
         </div>
         <div class="tl white fr mr205 div1" @load="loading()">
-          <p class="mb116">
+          <p class="mb116 wow fadeInUp" data-wow-duration="0.5s">
             <img src="/down_img/text1.png" alt="文字加载中.." class="w50">
           </p>
-          <p class="bgYellow black borR20 tc mar0 rel">
+          <p class="bgYellow black borR20 tc mar0 rel wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
             <img src="/down_img/download.png" class="mid"> <a href="javascript:" id="a" class="mid">下载星移盒子APP</a>
             <img src="/down_img/app.png" class="app_abs">
           </p>
@@ -19,26 +19,26 @@
     </div>
     <div class="download_bgimg2">
         <div class="clearfix container download_div1">
-          <div class="fl">
+          <div class="fl wow fadeInLeft">
             <p><img src="/down_img/text2.png" alt="文字加载中.."></p>
             <p class="grey mt45 font24"><a href="javascript:">带你发现更大的游戏世界</a></p>
           </div>
-          <img src="/down_img/img8.png" alt="文字加载中.." class="fr">
+          <img src="/down_img/img8.png" alt="文字加载中.." class="fr wow fadeInRight">
         </div>
     </div>
     <div class="bgBlack tc">
       <div class="container pd175">
-        <p><img src="/down_img/text3.png" alt="文字加载中.." class="mb125"></p>
+        <p><img src="/down_img/text3.png" alt="文字加载中.." class="mb125 wow fadeIn"></p>
         <ul class="clearfix">
-          <li>
+          <li class="wow fadeInUp" data-wow-delay="0.6s">
             <p><a href="javascript:"><img src="/down_img/strategy.png" alt="图片加载中.."></a></p>
             <p><a href="javascript:">游戏攻略</a></p>
           </li>
-          <li>
+          <li class="wow fadeInUp" data-wow-delay="0.8s">
             <p><a href="javascript:"><img src="/down_img/interflow.png" alt="图片加载中.."></a></p>
             <p><a href="javascript:">游戏社交</a></p>
           </li>
-          <li>
+          <li class="wow fadeInUp" data-wow-delay="1s">
             <p><a href="javascript:"><img src="/down_img/consult.png" alt="图片加载中.."></a></p>
             <p><a href="javascript:">游戏咨询</a></p>
           </li>
@@ -166,7 +166,7 @@ export default {
     /*padding-top: 145px;*/
   }
   .mb116{
-    margin: 80px 0 57px 0;
+    margin: 172px 0 67px 0;
   }
   li a{
     color: #fff;
