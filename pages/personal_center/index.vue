@@ -150,8 +150,8 @@
 		    <div class="modal" @click="show=!show"></div>
 			<div class="modal_box tl">
 				<p class="font24 grey">安全手机设置</p>
-				<p><input type="text" name="" placeholder="真实姓名"></p>
-				<p><input type="text" name="" placeholder="身份证号码" id="num"><input type="button" name="" value="获取验证码" id="but"></p>
+				<p><input type="text" name="" placeholder="手机号码" disabled="disabled"></p>
+				<p><input type="text" name="" placeholder="验证码" id="num"><input type="button" name="" value="获取验证码" id="but"></p>
 				<p><button class="active1" @click="ifshow()">下一步</button></p>
 			</div>
 		</div>
@@ -160,8 +160,8 @@
 		    <div class="modal" @click="fShow=!fShow"></div>
 			<div class="modal_box tl">
 				<p class="font24 grey">安全手机设置</p>
-				<p><input type="text" name="" placeholder="真实姓名"></p>
-				<p><input type="text" name="" placeholder="身份证号码" id="num"><input type="button" name="" value="获取验证码" id="but"></p>
+				<p><input type="text" name="" placeholder="新的手机号码"></p>
+				<p><input type="text" name="" placeholder="验证码" id="num"><input type="button" name="" value="获取验证码" id="but"></p>
 				<p><button class="active1" @click="fShow=!fShow">确定</button></p>
 			</div>
 		</div>

@@ -35,12 +35,22 @@
 							<tr class="two">
 								<td>充值游戏：</td>
 								<td>						
-									<span class="rel">
-										<input type="text" name="game" value="泡泡堂"><button @click="isShow=!isShow"><img src="/recharge_img/down.png"></button>
-										<img src="/recharge_img/img.png" class="abs" v-show="isShow">
-									</span>
-									&nbsp;&nbsp;
-									<input type="text" name="game" value="风云 3区"><button><img src="/recharge_img/down.png"></button>
+									<el-select v-model="value" placeholder="请选择">
+									    <el-option
+									      v-for="item in options"
+									      :key="item.value"
+									      :label="item.label"
+									      :value="item.value">
+									    </el-option>
+									</el-select>
+									<el-select v-model="value6" placeholder="请选择">
+									    <el-option
+									      v-for="item in serving"
+									      :key="item.value"
+									      :label="item.label"
+									      :value="item.value">
+									    </el-option>
+									  </el-select>
 								</td>
 							</tr>
 							<tr class="three">
@@ -54,9 +64,7 @@
 										<span @click="chooseMoney(4)">100</span>
 										<span @click="chooseMoney(5)">200</span>
 										<span @click="chooseMoney(6)">300</span><br>
-									<!-- </p>
-									<p> -->
-										<span class="bg_yes" @click="chooseMoney(7)">500</span>
+										<span @click="chooseMoney(7)">500</span>
 										<span @click="chooseMoney(8)">1000</span>
 										<span @click="chooseMoney(9)">2000</span>
 										<span @click="chooseMoney(10)">3000</span>
@@ -65,14 +73,14 @@
 										<span @click="chooseMoney(13)">2000</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()" placeholder="请输入数值">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textOne" @click="inputText()" placeholder="请输入整数值" @keyup="textOne()">
 									</p>
 								</td>
 							</tr>
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(0)" class="bg_yes">微信支付</button>
+							    	<button @click="tabChange(0)">微信支付</button>
 							    	<button @click="tabChange(1)">支付宝支付</button>
 							    	<button @click="tabChange(2)">网银支付</button>
 							    </td>
@@ -81,7 +89,7 @@
 					</table>
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
-						<li>
+						<li class="none">
 							<p class="font12 mb10 bg_yes">微信支付:<span class="orange">0</span>元</p>
 							<p><img src="/recharge_img/phone.png" class="imgA"></p>
 						</li>
@@ -131,34 +139,34 @@
 								<td>选择金额：</td>
 								<td>
 									<p>
-										<span @click="chooseMoney(14)">10元</span>
-										<span @click="chooseMoney(15)">20元</span>
-										<span @click="chooseMoney(16)">30元</span>
-										<span @click="chooseMoney(17)">50元</span>
-										<span @click="chooseMoney(18)">100元</span>
-										<span @click="chooseMoney(19)">200元</span>
-										<span @click="chooseMoney(20)">300元</span><br>
-										<span class="bg_yes" @click="chooseMoney(21)">500元</span>
-										<span @click="chooseMoney(22)">1000元</span>
-										<span @click="chooseMoney(23)">2000元</span>
-										<span @click="chooseMoney(24)">3000元</span>
-										<span @click="chooseMoney(25)">5000元</span>
-										<span @click="chooseMoney(26)">1000元</span>
-										<span @click="chooseMoney(27)">2000元</span>
+										<span @click="chooseMoney(14)">10</span>
+										<span @click="chooseMoney(15)">20</span>
+										<span @click="chooseMoney(16)">30</span>
+										<span @click="chooseMoney(17)">50</span>
+										<span @click="chooseMoney(18)">100</span>
+										<span @click="chooseMoney(19)">200</span>
+										<span @click="chooseMoney(20)">300</span><br>
+										<span @click="chooseMoney(21)">500</span>
+										<span @click="chooseMoney(22)">1000</span>
+										<span @click="chooseMoney(23)">2000</span>
+										<span @click="chooseMoney(24)">3000</span>
+										<span @click="chooseMoney(25)">5000</span>
+										<span @click="chooseMoney(26)">1000</span>
+										<span @click="chooseMoney(27)">2000</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textTwo" @click="inputText()" placeholder="请输入整数值" @keyup="textTwo()">
 									</p>
 								</td>
 							</tr>
 							<tr>
 								<td>金元宝说明：</td>
-								<td><span class="orange">金元宝比例1:1，例如充值100元得100金元宝；</span></td>
+								<td><span class="oranges">金元宝比例1:1，例如充值100元得100金元宝；</span></td>
 							</tr>
 							<tr class="four">
 								<td>支付方式：</td>
 							    <td class="tabTit">
-							    	<button @click="tabChange(3)" class="bg_yes">微信支付</button>
+							    	<button @click="tabChange(3)">微信支付</button>
 							    	<button @click="tabChange(4)">支付宝支付</button>
 							    	<button @click="tabChange(5)">网银支付</button>
 							    </td>
@@ -167,14 +175,14 @@
 					</table>
 					<ul class="tc tabBd">
 						<!-- 微信支付 -->
-						<li>
-							<p class="font12 mb10">微信支付:<span class="orange">0</span>元</p>
-							<p><img src="/recharge_img/phone.png"></p>
+						<li class="none">
+							<p class="font12 mb10">微信支付:<span class="orange">0</span>金元宝</p>
+							<p><img src="/recharge_img/phone.png" class="imgA"></p>
 						</li>
 						<!-- 支付宝支付 -->
 						<li class="none">
-							<p class="font12 mb10">支付宝支付<span class="orange">1000.00</span>元</p>
-							<p><img src="/recharge_img/ewm.png"></p>
+							<p class="font12 mb10">支付宝支付<span class="orange">0</span>金元宝</p>
+							<p><img src="/recharge_img/ewm.png" class="imgA"></p>
 						</li>
 						<!-- 网银支付 -->
 						<li class="clearfix none">
@@ -211,20 +219,43 @@
 						<tbody>
 							<tr class="one">
 								<td>充值账号：</td>
-								<td><input type="text" name="name" value="星移"><span class="none">更改帐号</span>
-									<span>我的金元宝：</span>
-									<span>10000</span>
-								</td>
+								<td>
+                                    <input type="text" value="星移" disabled class="read2" required="required" @blur="textChange2()"><span @click="remove2()">更改帐号</span>
+                                    <em class="my">我的金元宝：</em>
+									<em class="asset">10000</em>
+								</td>	
 							</tr>
 							<tr class="two">
 								<td>充值游戏：</td>
 								<td>						
-									<span class="rel">
-										<input type="text" name="game" value="泡泡堂"><button @click="isShow=!isShow"><img src="/recharge_img/down.png"></button>
-										<img src="/recharge_img/img.png" class="abs" v-show="isShow">
-									</span>
-									&nbsp;&nbsp;
-									<input type="text" name="game" value="风云 3区"><button><img src="/recharge_img/down.png"></button>
+									<!-- <el-select v-model="value5" multiple placeholder="请选择">
+									    <el-option
+									      v-for="item in options"
+									      :key="item.value"
+									      :label="item.label"
+									      :value="item.value">
+									    </el-option>
+									  </el-select>
+									  <el-select
+									    v-model="value11"
+									    multiple
+									    collapse-tags
+									    style="margin-left: 20px;"
+									    placeholder="请选择">
+									    <el-option
+									      v-for="item in options"
+									      :key="item.value"
+									      :label="item.label"
+									      :value="item.value">
+									    </el-option>
+									  </el-select> -->
+									  <select>
+									  	  <option value="">泡泡堂</option>
+									  	  <option value="">跳跳堂</option>
+									  	  <option value="">欢乐麻将</option>
+									  	  <option value="">欢乐斗地主</option>
+									  	  <option value="">绝地求生</option>
+									  </select>
 								</td>
 							</tr>
 							<tr class="three">
@@ -247,7 +278,7 @@
 										<span @click="chooseMoney(41)">2000</span>
 									</p>
 									<p class="other">
-										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText" @click="inputText()">
+										<em class="font18">其他</em>&nbsp;<input type="text" name="num" class="tc inputText textThree" @click="inputText()" @keyup="textThree()">
 									</p>
 								</td>
 							</tr>
@@ -256,6 +287,8 @@
 					<div class="tc"><button id="but">立即充值</button></div>
 				</div>
 			</div>
+			<!-- 提示 -->
+			<div class="tc ptb3 hint"></div>
 		</div>
 		<!-- 信息完善认证 -->
 		<div class="none">
@@ -284,87 +317,192 @@ export default {
 	},
   data () {
     return {
-      isShow: false
+      isShow: false,
+      options: [{
+                value: '选项1',
+                label: '泡泡堂'
+              }, {
+                value: '选项2',
+                label: '跳跳堂'
+              }, {
+                value: '选项3',
+                label: '欢乐麻将'
+              }, {
+                value: '选项4',
+                label: '欢乐斗地主'
+              }, {
+                value: '选项5',
+                label: '绝地求生'
+              }],
+              value: '',
+        serving: [{
+                 value: '选项1',
+                 label: '一区'
+               }, {
+                 value: '选项2',
+                 label: '二区'
+               }, {
+                 value: '选项3',
+                 label: '三区'
+               }, {
+                 value: '选项4',
+                 label: '四区'
+               }, {
+                 value: '选项5',
+                 label: '五区'
+               }, {
+                 value: '选项6',
+                 label: '六区'
+               }],
+               value6: ''
     }
   },
   methods:{
-      	// 头部导航切换
-        headChange(index){
-        	$('.head_ul>li').eq(index).addClass('clickColor').siblings().removeClass('clickColor');
-        	$(".head_ul>li").children('div').hide().eq(index).show();
-        	$(".recharge_box>div").hide().eq(index).show();
-        },
-        // 额度选择状态
-        chooseMoney(index){
-        	// 点击当前额度添加被选状态的类
-        	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
-        	$('.other').css("border","none")
-        	// 获取被选择的支付额度
-        	$(".orange").text($('.three>td').children('p').children('span').eq(index).text()+".00")
-        	// 以支付额度判断当前该显示的图片
-        	if ($(".orange").text()===0) {
-        		// 额度为0时显示手机图片
-        		$(".imgA").attr("src","/recharge_img/phone.png")
-        	}else{
-        		// 否则显示对应的支付二维码
-        		$(".imgA").attr("src","/recharge_img/ewm.png")
-        	}
-        },
-        // 其他金额输入框被点击时
-        inputText(){
-            $('.three>td').children('p').children('span').removeClass('bg_yes');
-            $('.other').css("border","1px solid #FD8F24")
-        },
-        // 支付方式切换
-      	tabChange(index){
-            $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
-            $(".tabBd>li").hide().eq(index).show();
-            // 其他金额输入框的要求 仅数字
-    		var reg = $(".inputText").val().match(/\d+\.?\d{0,10}/);
-    		// 当输入值不为空
-    		if (reg!=null) {
-    			//对输入带小数点的值添加向下取整的方法
-    			$(".inputText").val(Math.floor($(".inputText").val()))
-    			// 支付额度获取输入的值
-    			$(".orange").text($(".inputText").val()+".00")
-    			// 当支付额度不为0或输入值为NaN时
-              if ($(".orange").text()===0 || $(".inputText").val()==="NaN") {
-              	// 清空输入值，支付额度为0，显示手机图片
-              	$(".inputText").val("")
-    			    $(".orange").text("0")
-              	$(".imgA").attr("src","/recharge_img/phone.png")
-              }else{
-              	// 否则显示对应的支付二维码
-              	$(".imgA").attr("src","/recharge_img/ewm.png")
-              }
-              console.log(typeof $(".inputText").val())
-    		}
-    		else{
-    			$(".inputText").val("")
-    			$(".orange").text("0")
-    		}
-      	},
-      	// 点击span移除输入框的禁用属性并改变span标签颜色
-      	remove(){
-      		var text=$(".read").val()
-      		$(".read").removeAttr("disabled").val('').focus().val(text).siblings().css("color","#999");
-      	},
-      	// 充值账号的内容被修改
-      	textChange(){
-      		// 当内容为空时
-      		if ($(".read").val()==="") {
-      		  //移除输入框的禁用属性，改变span的提示内容 
-      		  $(".read").removeAttr("disabled").siblings().text("请完善账号").css("color","#FD8F24");
-      		}
-      		else {
-      		  $(".read").attr("disabled","disabled").siblings().text("更改帐号").css("color","#FD8F24");
-      		}
-      	}
+  	// 头部导航切换
+    headChange(index){
+    	$('.head_ul>li').eq(index).addClass('clickColor').siblings().removeClass('clickColor');
+    	$(".head_ul>li").children('div').hide().eq(index).show();
+    	$(".recharge_box>div").hide().eq(index).show();
+    },
+  	// 充值到游戏：点击span移除输入框的禁用属性并改变span标签颜色
+  	remove(){
+  		var text=$(".read").val()
+  		$(".read").removeAttr("disabled").val('').focus().val(text).siblings().css("color","#999");
+  	},
+  	// 金元宝充值到游戏
+  	remove2(){
+  		var text2=$(".read2").val()
+  		$(".read2").removeAttr("disabled").val('').focus().val(text2).siblings("span").css("color","#999");
+  	},
+  	// 充值到游戏：充值账号的内容被修改
+  	textChange(){
+  		// 当内容为空时
+  		if ($(".read").val()==="") {
+  		  //移除输入框的禁用属性，改变span的提示内容 
+  		  $(".read").removeAttr("disabled").siblings().text("请完善账号").css("color","#FD8F24");
+  		}
+  		else {
+  		  $(".read").attr("disabled","disabled").siblings().text("更改帐号").css("color","#FD8F24");
+  		}
+  	},
+  	// 金元宝充值到游戏
+  	textChange2(){
+  		if ($(".read2").val()==="") {
+  		  $(".read2").removeAttr("disabled").siblings("span").text("请完善账号").css("color","#FD8F24");
+  		}
+  		else {
+  		  $(".read2").attr("disabled","disabled").siblings("span").text("更改帐号").css("color","#FD8F24");
+  		}
+  	},
+    // 额度选择状态
+    chooseMoney(index){
+    	// 点击当前额度添加被选状态的类
+    	$('.three>td').children('p').children('span').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
+    	$('.other').css("border","none")
+    	// 获取被选择的支付额度
+    	$(".orange").text($('.three>td').children('p').children('span').eq(index).text()+".00")
+    	if ($(".orange").text()===0) {
+    		// 额度为0时显示手机图片
+    		$(".imgA").attr("src","/recharge_img/phone.png")
+    	}else{
+    		// 否则显示对应的支付二维码
+    		$(".imgA").attr("src","/recharge_img/ewm.png")
+    	}
+    	$(".inputText").val("")
+    },
+    // 其他金额输入框被点击时
+    inputText(){
+        $('.three>td').children('p').children('span').removeClass('bg_yes');
+        $('.other').css("border","1px solid #FD8F24")
+    },
+    // 支付方式切换
+  	tabChange(index){
+        $('.tabTit>button').eq(index).addClass('bg_yes').siblings().removeClass('bg_yes');
+        $(".tabBd>li").hide().eq(index).show();      
+  	},
+  	// 充值到游戏输入框
+  	textOne(){
+       // 其他金额输入框的要求 仅数字
+		var reg = $(".textOne").val().match(/\d+\.?\d{0,10}/);
+		// 当输入值不为空
+		if (reg!=null) {
+			// 支付额度获取输入的值并向下取整
+			$(".orange").text(Math.floor($(".textOne").val())+".00")
+			// 当支付额度不为0或输入值为NaN时
+          if ($(".orange").text()===0 || $(".textOne").val()==="NaN" || $(".textOne").val()<=0) {
+          	// 清空输入值，支付额度为0，显示手机图片
+          	$(".textOne").val("")
+			$(".orange").text("0")
+          	$(".imgA").attr("src","/recharge_img/phone.png")
+          }else{
+          	$(".imgA").attr("src","/recharge_img/ewm.png")
+          }
+		}else{
+			$(".textOne").val("")
+			$(".orange").text("0")
+			$(".imgA").attr("src","/recharge_img/phone.png")
+		}
+  	},
+  	// 充值到金元宝输入框
+  	textTwo(){
+       // 其他金额输入框的要求 仅数字
+		var reg = $(".textTwo").val().match(/\d+\.?\d{0,10}/);
+		// 当输入值不为空
+		if (reg!=null) {
+			// 支付额度获取输入的值并向下取整
+			$(".orange").text(Math.floor($(".textTwo").val())+".00")
+			// 当支付额度为0或输入值为NaN时
+          if ($(".orange").text()===0 || $(".textTwo").val()==="NaN" || $(".textTwo").val()<=0) {
+          	// 清空输入值，支付额度为0，显示手机图片
+          	$(".textTwo").val("")
+			$(".orange").text("0")
+          	$(".imgA").attr("src","/recharge_img/phone.png")
+          }else{
+          	$(".imgA").attr("src","/recharge_img/ewm.png")
+          }	
+		}else{
+			$(".textTwo").val("")
+			$(".orange").text("0")
+			$(".imgA").attr("src","/recharge_img/phone.png")
+		}
+  	},
+  	// 金元宝充值到游戏输入框
+  	textThree(){
+       // 其他金额输入框的要求 仅数字
+		var reg = $(".textThree").val().match(/\d+\.?\d{0,10}/);
+		// 对输入带小数点的值向下取整
+		$(".textThree").val(Math.floor($(".textThree").val()))
+		console.log(item.value)
+  	}
   }			
 }
 </script>
 
 <style scoped>
+select{
+	width: 275px;
+	height: 55px;
+	outline: none;
+	appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    border: 1px solid #FD8F24;
+    padding-left: 15px;
+    font-size: 18px;
+    background: url(/recharge_img/down.png) no-repeat right 15px center;
+}
+td .asset{
+	font-size: 26px;
+	font-weight: bold;
+	color: #FD8F24;
+}
+.my{
+	margin-left: 75px;
+}
+.hint{
+	font-size: 14px;
+	color: red;
+}
 a:hover{
 	color:#FD8F24;
 }
