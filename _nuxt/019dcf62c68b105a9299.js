@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{393:function(e,n,t){"use strict";t.r(n);var i={created:function(){this.$router.push("/download_center")}},o=t(3),u=Object(o.a)(i,function(){var e=this.$createElement;return(this._self._c||e)("div")},[],!1,null,null,null);u.options.__file="index.vue";n.default=u.exports}}]);
