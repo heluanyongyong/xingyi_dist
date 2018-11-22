@@ -3,14 +3,14 @@
 		<div class="top">
 			<img src="/shangwuhezuo/banner.png" alt="">
 		</div>
-		<div class="center">
+		<!-- <div class="center">
 			<div class="container">
 				<h2 class="title">合作伙伴</h2>
 				<div class="canvas">
 					<img src="/shangwuhezuo/xuebi.png" alt="">
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="bottom">
 			<div class="container">
 				<h2 class="title">商务合作</h2>

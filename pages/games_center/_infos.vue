@@ -123,11 +123,11 @@
 					<div class="clear"></div>
 					<div class="imgs_content">
 						<ul>
-							<li><img @click="click_img('/games_list/favor1.png')" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img('/games_list/favor1.png')" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img('/games_list/favor1.png')" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img('/games_list/favor1.png')" src="/games_list/favor1.png" alt=""></li>
-							<li><img @click="click_img('/games_list/favor1.png')" src="/games_list/favor1.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
+							<li><img @click="click_img" src="/games_list/favor1.png" alt=""></li>
 						</ul>
 					</div>
 					<!-- 弹框 -->
@@ -136,12 +136,14 @@
 						width="1000px"
 						>
 						<div class="dialog">
-							<div class="info">
-								<span>游戏截图</span>
-								<a href="">下载</a>
+							<div class="imgs_container">
 								<div class="img">
 									<img :src="dialog_imgSrc" alt="">
+									<img :src="dialog_imgSrc" alt="">
+									<img :src="dialog_imgSrc" alt="">
 								</div>
+								<img src="/games_list/left_small.png" alt="" class="left" @click="bigimg_prev">
+								<img src="/games_list/right_small.png" alt="" class="right" @click="bigimg_next">
 							</div>
 						</div>
 					</el-dialog>
@@ -255,17 +257,7 @@
 					float left
 					position relative
 					.info4_inner
-						transition all 1s
-						position absolute
-						width 100%
-						left 100%
-						top 0
-						&:nth-of-type(1)
-							left -100%
-						&:nth-of-type(2)
-							left 0%
-						&:nth-of-type(3)
-							left 100%
+						public_img_lunbo()
 						.left
 							float left
 							/*left+right的宽度之和不能超过100*/
@@ -317,17 +309,23 @@
 							width 95%
 							cursor pointer
 			.dialog
-				padding 30px
-				span
-					color #333
-					font-size 18px
-				a
-					color #FD8F24
-					margin-left 20px
-				.img
-					margin-top 20px
-					img
-						width 100%
+				padding 40px
+				.imgs_container
+					height 604px
+					position relative
+					overflow hidden
+					.img
+						height 100%
+						img
+							public_img_lunbo()
+					.left,.right
+						position absolute
+						top 50%
+						transform translateY(-50%)
+					.left
+						left 50px
+					.right
+						right 50px
 </style>
 <script>
 export default{
@@ -339,7 +337,8 @@ export default{
 	data(){
 		return{
 			modal_change: false,
-			dialog_imgSrc:''
+			// 放大图片及其初始值
+			dialog_imgSrc:'/games_list/favor1.png'
 		}
 	},
 	methods:{
@@ -351,11 +350,11 @@ export default{
 		},
 		change_imglist(index,name){
 			$('.imglist li').eq(index).find('a').addClass('active').parent('li').siblings().find('a').removeClass('active');
-			$('.imgs_content ul').slideUp(500).slideDown(500);
-			setTimeout(()=>{$('.imgs_content ul img').attr('src',name)},500);
+			$('.imgs_content ul').hide().slideDown(500);
+			$('.imgs_content ul img').attr('src',name);
+			this.dialog_imgSrc=name;
 		},
-		click_img(src){
-			this.dialog_imgSrc=src;
+		click_img(){
 			this.modal_change=true;
 		},
 		info4_img_prev(){
@@ -363,6 +362,12 @@ export default{
 		},
 		info4_img_next(){
 			$('.info4_content').append($('.info4_content .info4_inner:first-child'));
+		},
+		bigimg_prev(){
+			$('.imgs_container .img').prepend($('.imgs_container .img img:last-child'));
+		},
+		bigimg_next(){
+			$('.imgs_container .img').append($('.imgs_container .img img:first-child'));
 		}
 	}
 }

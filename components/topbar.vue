@@ -12,8 +12,8 @@
 							<div><img src="/games_center/退出@2x.png" alt=""><span> 退出</span></div>
 						</div>
 					</li> -->
-					<li v-if="account!=true">
-						<nuxt-link to="/login" class="active">登录</nuxt-link>
+					<li v-if="account!='true'">
+						<nuxt-link to="/login">登录</nuxt-link>
 						 | 
 						<nuxt-link to="/login/register">注册</nuxt-link>
 					</li>
@@ -27,7 +27,7 @@
 					</li>
 					<li v-if="account=='true'">
 						<img src="/games_center/tuichu.png" alt="" @click="logout">
-						<span><nuxt-link @click.native="logout" to="/login">退出</nuxt-link></span>
+						<span><nuxt-link @click.native="logout" to="/download_center">退出</nuxt-link></span>
 					</li>
 					<li>
 						<div class="pos_div">
@@ -215,7 +215,8 @@ export default{
 		},
 		logout(){
 			sessionStorage.setItem('account',"");
-			this.$router.push('login');
+			this.$router.push('/download_center');
+			window.location.reload();
 		}
 	}
 }

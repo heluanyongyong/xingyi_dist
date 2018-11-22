@@ -42,8 +42,22 @@ module.exports = {
     ]
   },
   plugins: [
-    {src:'~plugins/element-ui', ssr: true},
-    {src:'~plugins/vue-map'}
+    {
+      src:'~plugins/element-ui',
+      ssr: true
+    },
+    {
+      src:'~plugins/vue-map',
+      ssr: false
+    },
+    {
+      src:'~plugins/vue-wow',
+      ssr: false
+    },
+    {
+      src: '~plugins/vue-swiper',
+      ssr: false
+    }
   ],
   css: [
     {
@@ -52,6 +66,12 @@ module.exports = {
     },
     {
       src:'element-ui/lib/theme-chalk/index.css'
+    },
+    {
+      src:'animate.css'
+    },
+    {
+      src:'swiper/dist/css/swiper.css'
     }
   ]
 }

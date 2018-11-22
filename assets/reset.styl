@@ -25,6 +25,7 @@
   display: block;
 
   }
+  ::-ms-clear,::-ms-reveal{display:none;}
   *{box-sizing: border-box;}
   .clearfix:after{content:"\0020"; height:0; display:block; clear:both; overflow:hidden}
   .clearfix{*zoom:1;}
@@ -115,4 +116,13 @@
  .el-pagination li:hover {
   color: #FD8F24 !important;
  }
+ .el-pagination li.active:hover {
+  color: #FFF !important;
+ }
+ .el-dialog__header {
+  padding:0 !important;
+  }
+  .el-dialog__body {
+    padding: 0 !important;
+  }
 }

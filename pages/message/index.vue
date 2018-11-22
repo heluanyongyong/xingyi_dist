@@ -154,6 +154,7 @@
 	.bottom
 		text-align center
 		margin-top 30px
+		color pink
 </style>
 <script>
 export default{

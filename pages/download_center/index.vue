@@ -56,6 +56,8 @@ export default {
       title:'下载中心'
     }
   },
+  mounted(){
+  },
   data () {
     return {
       

@@ -1,8 +1,21 @@
 <template>
     <div>
-    	<div class="top3">
-    		<img src="/games_center/banner.png" alt="">
-    	</div>
+    	<no-ssr>
+        	<swiper :options="swiperOption" class="swiper_container">
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <swiper-slide><img src="/games_center/banner.png" alt=""></swiper-slide>
+                <div class="swiper-pagination" slot="pagination"></div>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+                <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
+        </no-ssr>
     	<div class="center">
     		<div class="container">
     			<div class="content_left">
@@ -84,10 +97,31 @@ export default{
 	    title:'游戏中心'
 	},
 	mounted(){
-		
 	},
     data(){
     	return{
+    		// 轮播器配置
+    		swiperOption: {
+                spaceBetween: 30,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                }
+            }
+    	}
+    },
+    computed:{
+    	mySwiper(){
+    		return this.$refs.mySwiper.swiper;
     	}
     },
     methods:{
@@ -115,11 +149,14 @@ export default{
 
 <style scoped lang="styl">
 @import '~assets/public.styl'
-.top3
+/*轮播器*/
+.swiper_container
+	line-height 0
+	width 100%
 	img
 		width 100%
 .center
-	padding 45px 0
+	padding 50px 0 45px 0
 	background rgba(248,248,248,1)
 	.container
 		container()
@@ -148,6 +185,8 @@ export default{
 						a
 							color #333333
 							&.active
+								color #FD8F24
+							&:hover
 								color #FD8F24
 			.content_left_bottom
 				/*若改变此处，需要改变右边边对应上边距*/
@@ -217,6 +256,8 @@ export default{
 					font-size 20px
 					&.active
 						color #FD8F24
+					&:hover
+						color #FD8F24
 			.gamecontent
 				ul
 					li
@@ -255,14 +296,15 @@ export default{
 												color #FD8F24
 							p
 								text-align center
-								margin-top 10px
+								margin-top 6px
 								&.title
 									font-size 18px
 									bold()
-									margin-bottom 15px
+									margin 15px 0 10px 0
 									padding 0 20px
 								&.content
-									font-size 12px
+									font-size 13px
+									color #666
 									&:last-child
 										padding-bottom 15px
 </style>
